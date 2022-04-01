@@ -147,7 +147,7 @@ html;
 html;
         View::set('header',$extraHeader);
         View::set('footer',$extraFooter);
-        View::render("login");
+        View::render("concur");
     }
 
     public function isUserValidate(){
