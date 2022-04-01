@@ -400,7 +400,7 @@ echo $header;
                                         <!-- <div class="form-check my-auto">
                                             <input class="form-check-input" type="checkbox" id="customCheck1" >
                                         </div> -->
-                                        <h6 class="ms-3 my-auto">Alimentos</h6>
+                                        <a href="/concur_files/Alimentos.mp4"><h6 class="ms-3 my-auto">Alimentos</h6></a>
                                         </div>
                                     </td>
                                     <td class="text-sm">
@@ -414,7 +414,7 @@ echo $header;
                                         <!-- <div class="form-check my-auto">
                                             <input class="form-check-input" type="checkbox" id="customCheck2" >
                                         </div> -->
-                                        <h6 class="ms-3 my-auto">Desgloses de IVA 0% y 16%</h6>
+                                        <a href="/concur_files/Desgloses_de_IVA_0_y_16.pdf"><h6 class="ms-3 my-auto">Desgloses de IVA 0% y 16%</h6></a>
                                         </div>
                                     </td>
                                     <td class="text-sm">
@@ -428,7 +428,7 @@ echo $header;
                                         <!-- <div class="form-check my-auto">
                                             <input class="form-check-input" type="checkbox" id="customCheck3">
                                         </div> -->
-                                        <h6 class="ms-3 my-auto">Desgloses de IVA e IEPS</h6>
+                                        <a href="/concur_files/Desgloses_deI_VA_e_IEPS.pdf"><h6 class="ms-3 my-auto">Desgloses de IVA e IEPS</h6></a>
                                         </div>
                                     </td>
                                     <td class="text-sm">
@@ -442,7 +442,7 @@ echo $header;
                                         <!-- <div class="form-check my-auto">
                                             <input class="form-check-input" type="checkbox" id="customCheck1" >
                                         </div> -->
-                                        <h6 class="ms-3 my-auto">Estacionamiento</h6>
+                                        <a href="/concur_files/Estacionamiento.mp4"><h6 class="ms-3 my-auto">Estacionamiento</h6></a>
                                         </div>
                                     </td>
                                     <td class="text-sm">
@@ -456,7 +456,7 @@ echo $header;
                                         <!-- <div class="form-check my-auto">
                                             <input class="form-check-input" type="checkbox" id="customCheck1" >
                                         </div> -->
-                                        <h6 class="ms-3 my-auto">Gastos en efectivo- tarjeta personal</h6>
+                                        <a href="/concur_files/Gastos en efectivo- tarjeta personal.mp4"><h6 class="ms-3 my-auto">Gastos en efectivo- tarjeta personal</h6></a>
                                         </div>
                                     </td>
                                     <td class="text-sm">
@@ -470,11 +470,11 @@ echo $header;
                                             <!-- <div class="form-check my-auto">
                                                 <input class="form-check-input" type="checkbox" id="customCheck1" >
                                             </div> -->
-                                            <h6 class="ms-3 my-auto">Hospedaje</h6>
+                                            <a href="/concur_files/Hospedaje_2022.mp4"><h6 class="ms-3 my-auto">Hospedaje</h6></a>
                                             </div>
                                         </td>
                                         <td class="text-sm">
-                                            <a href="/concur_files/Hospedaje.mp4">Hospedaje.mp4</a>
+                                            <a href="/concur_files/Hospedaje_2022.mp4">Hospedaje.mp4</a>
                                         </td>
                                     </tr>
 
@@ -484,7 +484,7 @@ echo $header;
                                             <!-- <div class="form-check my-auto">
                                                 <input class="form-check-input" type="checkbox" id="customCheck1" >
                                             </div> -->
-                                            <h6 class="ms-3 my-auto">Kit de Seguridad</h6>
+                                            <a href="/concur_files/Kit de Seguridad.mp4"><h6 class="ms-3 my-auto">Kit de Seguridad</h6></a>
                                             </div>
                                         </td>
                                         <td class="text-sm">
@@ -498,7 +498,7 @@ echo $header;
                                             <!-- <div class="form-check my-auto">
                                                 <input class="form-check-input" type="checkbox" id="customCheck1" >
                                             </div> -->
-                                            <h6 class="ms-3 my-auto">Mantenimiento de auto</h6>
+                                            <a href="/concur_files/Mantenimiento de auto.mp4"><h6 class="ms-3 my-auto">Mantenimiento de auto</h6></a>
                                             </div>
                                         </td>
                                         <td class="text-sm">
@@ -512,7 +512,7 @@ echo $header;
                                             <!-- <div class="form-check my-auto">
                                                 <input class="form-check-input" type="checkbox" id="customCheck1" >
                                             </div> -->
-                                            <h6 class="ms-3 my-auto">Prueba Covid</h6>
+                                            <a href="/concur_files/Prueba Covid.mp4"><h6 class="ms-3 my-auto">Prueba Covid</h6></a>
                                             </div>
                                         </td>
                                         <td class="text-sm">
