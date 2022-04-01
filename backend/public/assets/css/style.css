@@ -1,0 +1,61 @@
+.height-350{
+    height: 350px !important;
+}
+
+.height-500{
+    height: 600px !important;
+}
+
+@media (max-width: 990px) {
+    #days-desk{
+        display: none !important;
+    }
+
+    #titulo-program{
+        text-align: center;
+    }
+
+    li#movil-li {
+        padding: 0 5px;
+    }
+
+    .programa-1{
+        background-image: url('../../assets/img/h5.png'); background-size:cover;
+    }
+    .programa-2{
+        background-image: url('../../assets/img/v\ \(1\).png'); background-size:cover;
+    }
+    .programa-3{
+        background-image: url('../../assets/img/h7.png'); background-size:cover;
+    }
+    .programa-4{
+        background-image: url('../../assets/img/v\ \(3\).png'); background-size:cover;
+    }
+
+    .h-programa-movil{
+        height: 400px !important;
+    }
+}
+
+@media (min-width: 990px) {
+    #days-movil{
+        display: none !important;
+    }
+
+    .programa-1{
+        background-image: url('../../assets/img/h1.png'); background-size:cover;
+    }
+    .programa-2{
+        background-image: url('../../assets/img/2.png'); background-size:cover;
+    }
+    .programa-3{
+        background-image: url('../../assets/img/h3.png'); background-size:cover;
+    }
+    .programa-4{
+        background-image: url('../../assets/img/4.png'); background-size:cover;
+    }
+
+    .h-programa-movil{
+        height: 500px !important;
+    }
+}
