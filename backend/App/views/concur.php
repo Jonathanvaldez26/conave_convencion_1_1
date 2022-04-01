@@ -376,9 +376,9 @@ echo $header;
                             <div class="card-header pb-0">
                             <div class="d-lg-flex">
                                 <div>
-                                <h5 class="mb-0">All Products</h5>
+                                <h5 class="mb-0">Concur</h5>
                                 <p class="text-sm mb-0">
-                                    A lightweight, extendable, dependency-free javascript HTML table plugin.
+                                    Tabla con registros de Concur
                                 </p>
                                 </div>
                                 
@@ -397,38 +397,127 @@ echo $header;
                                     <tr>
                                     <td>
                                         <div class="d-flex">
-                                        <div class="form-check my-auto">
-                                            <input class="form-check-input" type="checkbox" id="customCheck1" checked>
-                                        </div>
-                                        <h6 class="ms-3 my-auto">BKLGO Full Zip Hoodie</h6>
+                                        <!-- <div class="form-check my-auto">
+                                            <input class="form-check-input" type="checkbox" id="customCheck1" >
+                                        </div> -->
+                                        <h6 class="ms-3 my-auto">Alimentos</h6>
                                         </div>
                                     </td>
-                                    <td class="text-sm">Clothing</td>
+                                    <td class="text-sm">
+                                        <a href="/concur_files/Alimentos.mp4">Alimentos.mp4</a>
+                                    </td>
                                     
                                     </tr>
                                     <tr>
                                     <td>
                                         <div class="d-flex">
-                                        <div class="form-check my-auto">
-                                            <input class="form-check-input" type="checkbox" id="customCheck2" checked>
-                                        </div>
-                                        <h6 class="ms-3 my-auto">MacBook Pro</h6>
+                                        <!-- <div class="form-check my-auto">
+                                            <input class="form-check-input" type="checkbox" id="customCheck2" >
+                                        </div> -->
+                                        <h6 class="ms-3 my-auto">Desgloses de IVA 0% y 16%</h6>
                                         </div>
                                     </td>
-                                    <td class="text-sm">Electronics</td>
+                                    <td class="text-sm">
+                                        <a href="/concur_files/Desgloses_de_IVA_0_y_16.pdf">Desgloses de IVA 0% y 16%.pdf</a>
+                                    </td>
                                     
                                     </tr>
                                     <tr>
                                     <td>
                                         <div class="d-flex">
-                                        <div class="form-check my-auto">
+                                        <!-- <div class="form-check my-auto">
                                             <input class="form-check-input" type="checkbox" id="customCheck3">
-                                        </div>
-                                        <h6 class="ms-3 my-auto">Metro Bar Stool</h6>
+                                        </div> -->
+                                        <h6 class="ms-3 my-auto">Desgloses de IVA e IEPS</h6>
                                         </div>
                                     </td>
-                                    <td class="text-sm">Furniture</td>
-                                    
+                                    <td class="text-sm">
+                                        <a href="/concur_files/Desgloses_deI_VA_e_IEPS.pdf">Desgloses de IVA e IEPS.pdf</a>
+                                    </td>
+                                    </tr>
+
+                                    <tr>
+                                    <td>
+                                        <div class="d-flex">
+                                        <!-- <div class="form-check my-auto">
+                                            <input class="form-check-input" type="checkbox" id="customCheck1" >
+                                        </div> -->
+                                        <h6 class="ms-3 my-auto">Estacionamiento</h6>
+                                        </div>
+                                    </td>
+                                    <td class="text-sm">
+                                        <a href="/concur_files/Estacionamiento.mp4">Estacionamiento.mp4</a>
+                                    </td>
+                                    </tr>
+
+                                    <tr>
+                                    <td>
+                                        <div class="d-flex">
+                                        <!-- <div class="form-check my-auto">
+                                            <input class="form-check-input" type="checkbox" id="customCheck1" >
+                                        </div> -->
+                                        <h6 class="ms-3 my-auto">Gastos en efectivo- tarjeta personal</h6>
+                                        </div>
+                                    </td>
+                                    <td class="text-sm">
+                                        <a href="/concur_files/Gastos en efectivo- tarjeta personal.mp4">Gastos en efectivo- tarjeta personal.mp4</a>
+                                    </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>
+                                            <div class="d-flex">
+                                            <!-- <div class="form-check my-auto">
+                                                <input class="form-check-input" type="checkbox" id="customCheck1" >
+                                            </div> -->
+                                            <h6 class="ms-3 my-auto">Hospedaje</h6>
+                                            </div>
+                                        </td>
+                                        <td class="text-sm">
+                                            <a href="/concur_files/Hospedaje.mp4">Hospedaje.mp4</a>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>
+                                            <div class="d-flex">
+                                            <!-- <div class="form-check my-auto">
+                                                <input class="form-check-input" type="checkbox" id="customCheck1" >
+                                            </div> -->
+                                            <h6 class="ms-3 my-auto">Kit de Seguridad</h6>
+                                            </div>
+                                        </td>
+                                        <td class="text-sm">
+                                            <a href="/concur_files/Kit de Seguridad.mp4">Kit de Seguridad.mp4</a>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>
+                                            <div class="d-flex">
+                                            <!-- <div class="form-check my-auto">
+                                                <input class="form-check-input" type="checkbox" id="customCheck1" >
+                                            </div> -->
+                                            <h6 class="ms-3 my-auto">Mantenimiento de auto</h6>
+                                            </div>
+                                        </td>
+                                        <td class="text-sm">
+                                            <a href="/concur_files/Mantenimiento de auto.mp4">Mantenimiento de auto.mp4</a>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>
+                                            <div class="d-flex">
+                                            <!-- <div class="form-check my-auto">
+                                                <input class="form-check-input" type="checkbox" id="customCheck1" >
+                                            </div> -->
+                                            <h6 class="ms-3 my-auto">Prueba Covid</h6>
+                                            </div>
+                                        </td>
+                                        <td class="text-sm">
+                                            <a href="/concur_files/Prueba Covid.mp4">Prueba Covid.mp4</a>
+                                        </td>
                                     </tr>
                                     
                                 </tbody>
