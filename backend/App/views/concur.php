@@ -390,7 +390,7 @@ echo $header;
                                 <thead class="thead-light">
                                     <tr>
                                     <th>Nombre</th>
-                                    <th>Link</th>
+                                    <!-- <th>Link</th> -->
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -403,9 +403,9 @@ echo $header;
                                         <a href="/concur_files/Alimentos.mp4"><h6 class="ms-3 my-auto">Alimentos</h6></a>
                                         </div>
                                     </td>
-                                    <td class="text-sm">
+                                    <!-- <td class="text-sm">
                                         <a href="/concur_files/Alimentos.mp4">Alimentos.mp4</a>
-                                    </td>
+                                    </td> -->
                                     
                                     </tr>
                                     <tr>
@@ -417,9 +417,9 @@ echo $header;
                                         <a href="/concur_files/Desgloses_de_IVA_0_y_16.pdf"><h6 class="ms-3 my-auto">Desgloses de IVA 0% y 16%</h6></a>
                                         </div>
                                     </td>
-                                    <td class="text-sm">
+                                    <!-- <td class="text-sm">
                                         <a href="/concur_files/Desgloses_de_IVA_0_y_16.pdf">Desgloses de IVA 0% y 16%.pdf</a>
-                                    </td>
+                                    </td> -->
                                     
                                     </tr>
                                     <tr>
@@ -431,9 +431,9 @@ echo $header;
                                         <a href="/concur_files/Desgloses_deI_VA_e_IEPS.pdf"><h6 class="ms-3 my-auto">Desgloses de IVA e IEPS</h6></a>
                                         </div>
                                     </td>
-                                    <td class="text-sm">
+                                    <!-- <td class="text-sm">
                                         <a href="/concur_files/Desgloses_deI_VA_e_IEPS.pdf">Desgloses de IVA e IEPS.pdf</a>
-                                    </td>
+                                    </td> -->
                                     </tr>
 
                                     <tr>
@@ -445,9 +445,9 @@ echo $header;
                                         <a href="/concur_files/Estacionamiento.mp4"><h6 class="ms-3 my-auto">Estacionamiento</h6></a>
                                         </div>
                                     </td>
-                                    <td class="text-sm">
+                                    <!-- <td class="text-sm">
                                         <a href="/concur_files/Estacionamiento.mp4">Estacionamiento.mp4</a>
-                                    </td>
+                                    </td> -->
                                     </tr>
 
                                     <tr>
@@ -459,9 +459,9 @@ echo $header;
                                         <a href="/concur_files/Gastos en efectivo- tarjeta personal.mp4"><h6 class="ms-3 my-auto">Gastos en efectivo- tarjeta personal</h6></a>
                                         </div>
                                     </td>
-                                    <td class="text-sm">
+                                    <!-- <td class="text-sm">
                                         <a href="/concur_files/Gastos en efectivo- tarjeta personal.mp4">Gastos en efectivo- tarjeta personal.mp4</a>
-                                    </td>
+                                    </td> -->
                                     </tr>
 
                                     <tr>
@@ -473,9 +473,9 @@ echo $header;
                                             <a href="/concur_files/Hospedaje_2022.mp4"><h6 class="ms-3 my-auto">Hospedaje</h6></a>
                                             </div>
                                         </td>
-                                        <td class="text-sm">
+                                        <!-- <td class="text-sm">
                                             <a href="/concur_files/Hospedaje_2022.mp4">Hospedaje.mp4</a>
-                                        </td>
+                                        </td> -->
                                     </tr>
 
                                     <tr>
@@ -487,9 +487,9 @@ echo $header;
                                             <a href="/concur_files/Kit de Seguridad.mp4"><h6 class="ms-3 my-auto">Kit de Seguridad</h6></a>
                                             </div>
                                         </td>
-                                        <td class="text-sm">
+                                        <!-- <td class="text-sm">
                                             <a href="/concur_files/Kit de Seguridad.mp4">Kit de Seguridad.mp4</a>
-                                        </td>
+                                        </td> -->
                                     </tr>
 
                                     <tr>
@@ -501,9 +501,9 @@ echo $header;
                                             <a href="/concur_files/Mantenimiento de auto.mp4"><h6 class="ms-3 my-auto">Mantenimiento de auto</h6></a>
                                             </div>
                                         </td>
-                                        <td class="text-sm">
+                                        <!-- <td class="text-sm">
                                             <a href="/concur_files/Mantenimiento de auto.mp4">Mantenimiento de auto.mp4</a>
-                                        </td>
+                                        </td> -->
                                     </tr>
 
                                     <tr>
@@ -515,9 +515,9 @@ echo $header;
                                             <a href="/concur_files/Prueba Covid.mp4"><h6 class="ms-3 my-auto">Prueba Covid</h6></a>
                                             </div>
                                         </td>
-                                        <td class="text-sm">
+                                        <!-- <td class="text-sm">
                                             <a href="/concur_files/Prueba Covid.mp4">Prueba Covid.mp4</a>
-                                        </td>
+                                        </td> -->
                                     </tr>
                                     
                                 </tbody>
