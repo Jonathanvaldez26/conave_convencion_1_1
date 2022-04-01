@@ -17,7 +17,7 @@ class Concur{
         <link rel="apple-touch-icon" sizes="76x76" href="../../../assets/img/aso_icon.png">
         <link rel="icon" type="image/vnd.microsoft.icon" href="../../../assets/img/aso_icon.png">
         <title>
-           Login - CONAVE
+           Concur - CONAVE
         </title>
         <!--     Fonts and icons     -->
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
