@@ -171,8 +171,9 @@
                                         <input type="file" accept="application/pdf" class="form-control" id="file_" name="file_" required>
                                     </div>
                                     <span id="availability_4_"></span>
+                                    <p>Archivo en PDF con un tamaño no menor a 2 MB</p>
                                 </div>
-                                <p>Archivo en PDF con un tamaño no menor a 2 MB</p>
+
                             </div>
                             
                             <input type="hidden" id="user_" name="user_" value="<?=$_SESSION["utilerias_asistentes_id"]?>">
