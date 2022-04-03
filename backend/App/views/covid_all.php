@@ -172,6 +172,7 @@
                                     </div>
                                     <span id="availability_4_"></span>
                                 </div>
+                                <p>Archivo en PDF con un tamaño no menor a 2 MB</p>
                             </div>
                             
                             <input type="hidden" id="user_" name="user_" value="<?=$_SESSION["utilerias_asistentes_id"]?>">
