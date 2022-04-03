@@ -171,7 +171,7 @@
                                         <input type="file" accept="application/pdf" class="form-control" id="file_" name="file_" required>
                                     </div>
                                     <span id="availability_4_"></span>
-                                    <p>Archivo en PDF con un tamaño no menor a 2 MB</p>
+                                    <p style="font: 10px">Archivo en PDF con un tamaño no menor a 2 MB</p>
                                 </div>
 
                             </div>
