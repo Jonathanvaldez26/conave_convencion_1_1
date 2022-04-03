@@ -35,11 +35,11 @@ html;
         //Modulo Comprobante de vacunacion
         $comprobante_vacunacion = VaccinationDao::getCountHome($_SESSION['utilerias_asistentes_id']);
         //descomentar esto cuando nos diga janeth
-        // if($comprobante_vacunacion['count'] >= 1 ){
-        // $active_pruebas_covid = "Disponible <i class=\"fa fa-check-circle me-sm-0\" style=\"color: #01a31c\"></i>";
-        // }else{
+         if($comprobante_vacunacion['count'] >= 1 ){
+         $active_pruebas_covid = "Disponible <i class=\"fa fa-check-circle me-sm-0\" style=\"color: #01a31c\"></i>";
+         }else{
           $active_pruebas_covid = "En espera <i class=\"fa fa-clock me-sm-0\" style=\"color: #8a6d3b\"></i>";
-        //}
+        }
 
         //modulo pases de abordar
         $pruebas_covid = CovidDao::getCount($_SESSION['utilerias_asistentes_id']);
@@ -58,24 +58,6 @@ html;
         }
        
         $card_permisos = HomeDao::getCountByUser($_SESSION['utilerias_asistentes_id']);
-
-        //$pickup_permisos = HomeDao::getCountPickUp($_SESSION['utilerias_asistentes_id']);
-        $tabla = '';
-
-        //foreach ($pickup_permisos as $key => $value) {
-        //    if ($value['count'] >= 0) {
-        //        $tabla.= <<<html
-        //        aaaaaaas
-//html;
-  //          } else {
-    //            $tabla.= <<<html
-    //            ssssss
-//html;
-
-          //  }
-        //}
-
-   
 
 
         $footer =<<<html

@@ -103,7 +103,7 @@ html;
                       if(respuesta == 'success'){
                          // $('#modal_payment_ticket').modal('toggle');
                          
-                          swal("¡Se ha guardado tu la prueba correctamente!", "", "success").
+                          swal("¡Se ha guardado la prueba correctamente!", "", "success").
                           then((value) => {
                               window.location.replace("/Covid/");
                           });
@@ -216,18 +216,18 @@ html;
 
     $comprobante_vacunacion = VaccinationDao::getCountHome($_SESSION['utilerias_asistentes_id']);
 	//descomentar esto para activar las pruebas covid el dia que janeth nos indique
-    //if($comprobante_vacunacion['count'] >= 1 ){
-      //View::set('iframe_doc',$iframe_doc);
-      //View::set('tabla',$tabla);
-      //View::set('fechaActual',$fechaActual);
-      //View::set('fecha_7d',$fecha_7d);
-      //View::set('fecha_hoy',$fecha_hoy);
-      //View::set('header',$this->_contenedor->header($extraHeader));
-      //View::set('footer',$extraFooter);
-      //View::render("covid_all");
-    //}else{
+    if($comprobante_vacunacion['count'] >= 1 ){
+      View::set('iframe_doc',$iframe_doc);
+      View::set('tabla',$tabla);
+      View::set('fechaActual',$fechaActual);
+      View::set('fecha_7d',$fecha_7d);
+      View::set('fecha_hoy',$fecha_hoy);
+      View::set('header',$this->_contenedor->header($extraHeader));
+      View::set('footer',$extraFooter);
+      View::render("covid_all");
+    }else{
       View::render("covid_work");
-    //}
+    }
   }
 
   public function uploadPrueba(){
