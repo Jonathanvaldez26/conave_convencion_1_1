@@ -74,7 +74,14 @@
                     <div class="col-lg-12 col-sm-6">
                         <div class="card mt-4">
                             <div class="card-header pb-0 p-4">
-                                <h6 class="mb-4">Tus Pases de Abordar</h6>
+                                <h6 class="mb-3">Tus Pases de Abordar</h6>
+                            </div>
+                            <div class="text-danger mx-4">
+                                <h7 class=" text-danger">
+                                    <b>NOTA: </b>Si usted tiene escalas encontrará en el mismo archivo 
+                                    <b>PDF</b>
+                                    sus 2 pases de abordar.
+                                </h7>
                             </div>
                             <div class="card-body p-3">
                                 <ul class="list-group">
@@ -141,11 +148,107 @@
                     </div>
                 </div>
             </div>
+            <div class="col-xl-5 col-lg-7 mt-lg-0 mt-4">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="row mt-4">
+                            <div class="col-lg-12">
+                                <div class="card widget-calendar">
+                                    <div class="card-header p-3 pb-0">
+                                        <h6 class="mb-0 text-center">Calendario</h6>
+                                        <div class="text-center">
+                                            <span class="p text-sm font-weight-bold mb-0">Hoy es &nbsp;</span>
+                                            <span class="p text-sm font-weight-bold mb-0 text-dark widget-calendar-num-day"></span>
+                                                <span class="p text-sm font-weight-bold mb-0 widget-calendar-num-day">&nbsp; de &nbsp;</span>
+                                            <span class="p text-sm font-weight-bold mb-0 text-dark widget-calendar-month"></span>
+                                                <span class="p text-sm font-weight-bold mb-0 widget-calendar-num-day">&nbsp; del &nbsp;</span>
+                                            <span class="p text-sm font-weight-bold mb-1 text-dark widget-calendar-year"></span>
+                                        </div>
+                                        <!-- <hr class="horizontal dark mb-0"> -->
+                                        <div class="text-center">
+                                            <span class="badge badge-info">Rumbo a la convención</span>
+                                            <span class="badge badge-success">Regreso a casa</span> <br>
+                                        </div>
+                                    </div>
+                                    <!-- Card body -->
+                                    <div class="card-body p-3">
+                                        <div data-toggle="widget-calendar"></div>
+                                        <div>
+                                            <table class="table">
+                                                <thead class="thead-light" style="font-size: small;">
+                                                    <tr>
+                                                        <td>Lunes</td>
+                                                        <td>Martes</td>
+                                                        <td>Miércoles</td>
+                                                        <td>Jueves</td>
+                                                        <td>Viernes</td>
+                                                        <td>Sábado</td>
+                                                        <td>Domingo</td>
+                                                    </tr>
+                                                </thead>
+                                                <tbody class="text-center">
+                                                    <tr>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td>1</td>
+                                                        <td>2</td>
+                                                        <td>3</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>4</td>
+                                                        <td>5</td>
+                                                        <td><span class="badge badge-info" data-bs-toggle="tooltip" data-bs-placement="top" title="" data-bs-original-title="Rumbo a la Convención">6</span></td>
+                                                        <td>7</td>
+                                                        <td>8</td>
+                                                        <td><span class="badge badge-success" data-bs-toggle="tooltip" data-bs-placement="top" title="" data-bs-original-title="Regreso a casa">9</span></td>
+                                                        <td>10</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>11</td>
+                                                        <td>12</td>
+                                                        <td>13</td>
+                                                        <td>14</td>
+                                                        <td>15</td>
+                                                        <td>16</td>
+                                                        <td>17</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>18</td>
+                                                        <td>19</td>
+                                                        <td>20</td>
+                                                        <td>21</td>
+                                                        <td>22</td>
+                                                        <td>23</td>
+                                                        <td>24</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>25</td>
+                                                        <td>26</td>
+                                                        <td>27</td>
+                                                        <td>28</td>
+                                                        <td>29</td>
+                                                        <td>30</td>
+                                                        <td></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+
             <div class="col-xl-5 col-lg-7 mt-lg-0 mt-4" hidden>
                 <div class="row">
                     <div class="col-12">
                         <div class="card widget-calendar h-100">
-                            <!-- Card header -->
+                            Card header
                             <div class="card-header p-3 pb-0">
                                 <h6 class="mb-0">Calendario para Vuelos</h6>
                                 <div class="d-flex">
@@ -154,7 +257,8 @@
                                     <div class="p text-sm font-weight-bold mb-1 widget-calendar-year">2022</div>
                                 </div>
                             </div>
-                            <!-- Card body -->
+                            Card body
+                            
                             <div class="card-body p-3">
                                 <div data-toggle="widget-calendar" class="fc fc-media-screen fc-direction-ltr fc-theme-standard"><div class="fc-view-harness fc-view-harness-passive"><div class="fc-daygrid fc-dayGridMonth-view fc-view"><table class="fc-scrollgrid "><thead><tr class="fc-scrollgrid-section fc-scrollgrid-section-header "><td><div class="fc-scroller-harness"><div class="fc-scroller" style="overflow: visible;"><table class="fc-col-header " style="width: 557px;"><colgroup></colgroup><tbody><tr><th class="fc-col-header-cell fc-day fc-day-sun"><div class="fc-scrollgrid-sync-inner"><a class="fc-col-header-cell-cushion ">Sun</a></div></th><th class="fc-col-header-cell fc-day fc-day-mon"><div class="fc-scrollgrid-sync-inner"><a class="fc-col-header-cell-cushion ">Mon</a></div></th><th class="fc-col-header-cell fc-day fc-day-tue"><div class="fc-scrollgrid-sync-inner"><a class="fc-col-header-cell-cushion ">Tue</a></div></th><th class="fc-col-header-cell fc-day fc-day-wed"><div class="fc-scrollgrid-sync-inner"><a class="fc-col-header-cell-cushion ">Wed</a></div></th><th class="fc-col-header-cell fc-day fc-day-thu"><div class="fc-scrollgrid-sync-inner"><a class="fc-col-header-cell-cushion ">Thu</a></div></th><th class="fc-col-header-cell fc-day fc-day-fri"><div class="fc-scrollgrid-sync-inner"><a class="fc-col-header-cell-cushion ">Fri</a></div></th><th class="fc-col-header-cell fc-day fc-day-sat">
                                 <div class="fc-scrollgrid-sync-inner">
@@ -300,5 +404,132 @@
 
 <?php echo $footer; ?>
 
+<script>
+    $(document).ready(function (){
+        if (document.querySelector('[data-toggle="widget-calendar"]')) {
+            var calendarEl = document.querySelector('[data-toggle="widget-calendar"]');
+            var today = new Date();
+            var mYear = today.getFullYear();
+            var weekday = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+            var mDay = weekday[today.getDay()];
+            var numDay = today.getDate();
+
+            var m = today.getMonth();
+            var d = today.getDate();
+            document.getElementsByClassName('widget-calendar-year')[0].innerHTML = mYear;
+            document.getElementsByClassName('widget-calendar-day')[0].innerHTML = mDay;
+            switch (m+1) {
+                case 1:
+                    document.getElementsByClassName('widget-calendar-month')[0].innerHTML = 'Enero';
+                    break;
+                
+                case 2:
+                    document.getElementsByClassName('widget-calendar-month')[0].innerHTML = 'Febrero';
+                    break;
+
+                case 3:
+                    document.getElementsByClassName('widget-calendar-month')[0].innerHTML = 'Marzo';
+                    break;
+
+                case 4:
+                    document.getElementsByClassName('widget-calendar-month')[0].innerHTML = 'Abril';
+                    break;
+            
+                case 5:
+                    document.getElementsByClassName('widget-calendar-month')[0].innerHTML = 'Mayo';
+                    break;
+
+                case 6:
+                    document.getElementsByClassName('widget-calendar-month')[0].innerHTML = 'Junio';
+                    break;
+
+                default:
+                    break;
+            }
+            document.getElementsByClassName('widget-calendar-num-day')[0].innerHTML = numDay;
+
+            var calendar = new FullCalendar.Calendar(calendarEl, {
+                contentHeight: 'auto',
+                initialView: 'dayGridMonth',
+                selectable: true,
+                initialDate: '2020-12-01',
+                editable: true,
+                headerToolbar: false,
+                events: [{
+                    title: 'Call with Dave',
+                    start: '2020-11-18',
+                    end: '2020-11-18',
+                    className: 'bg-gradient-danger'
+                },
+
+                {
+                    title: 'Lunch meeting',
+                    start: '2020-11-21',
+                    end: '2020-11-22',
+                    className: 'bg-gradient-warning'
+                },
+
+                {
+                    title: 'All day conference',
+                    start: '2020-11-29',
+                    end: '2020-11-29',
+                    className: 'bg-gradient-success'
+                },
+
+                {
+                    title: 'Meeting with Mary',
+                    start: '2020-12-01',
+                    end: '2020-12-01',
+                    className: 'bg-gradient-info'
+                },
+
+                {
+                    title: 'Winter Hackaton',
+                    start: '2020-12-03',
+                    end: '2020-12-03',
+                    className: 'bg-gradient-danger'
+                },
+
+                {
+                    title: 'Digital event',
+                    start: '2020-12-07',
+                    end: '2020-12-09',
+                    className: 'bg-gradient-warning'
+                },
+
+                {
+                    title: 'Marketing event',
+                    start: '2020-12-10',
+                    end: '2020-12-10',
+                    className: 'bg-gradient-primary'
+                },
+
+                {
+                    title: 'Dinner with Family',
+                    start: '2020-12-19',
+                    end: '2020-12-19',
+                    className: 'bg-gradient-danger'
+                },
+
+                {
+                    title: 'Black Friday',
+                    start: '2020-12-23',
+                    end: '2020-12-23',
+                    className: 'bg-gradient-info'
+                },
+
+                {
+                    title: 'Cyber Week',
+                    start: '2020-12-02',
+                    end: '2020-12-02',
+                    className: 'bg-gradient-warning'
+                },
+
+                ]
+            });
+            calendar.render();
+            }
+    })
+</script>
 
 

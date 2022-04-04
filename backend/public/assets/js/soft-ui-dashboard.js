@@ -75,6 +75,7 @@ if (document.querySelector('[data-toggle="widget-calendar"]')) {
   var mYear = today.getFullYear();
   var weekday = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
   var mDay = weekday[today.getDay()];
+  var numDay = today.getDate();
 
   var m = today.getMonth();
   var d = today.getDate();
