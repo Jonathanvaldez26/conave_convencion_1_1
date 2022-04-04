@@ -43,6 +43,7 @@ html;
 
         //modulo pases de abordar
         $pruebas_covid = CovidDao::getCount($_SESSION['utilerias_asistentes_id']);
+        // var_dump($pruebas_covid);
         if($pruebas_covid['count'] >= 1 ){
         $active_pase_abordar = "Disponible <i class=\"fa fa-check-circle me-sm-0\" style=\"color: #01a31c\"></i>";
         }else{

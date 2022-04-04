@@ -67,7 +67,7 @@ sql;
     public static function getCount($id){
       $mysqli = Database::getInstance(true);
       $query =<<<sql
-      SELECT COUNT(*) as count FROM prueba_covid WHERE status = 1 and  utilerias_asistentes_id = $id ORDER BY id_prueba_covid ASC;
+      SELECT COUNT(*) as count FROM prueba_covid WHERE status = 2 and  utilerias_asistentes_id = $id ORDER BY id_prueba_covid ASC;
 sql;
       return $mysqli->queryOne($query);
   }

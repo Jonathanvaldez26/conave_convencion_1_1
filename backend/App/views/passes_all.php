@@ -61,7 +61,7 @@
                             <div class="overflow-hidden position-relative border-radius-lg bg-cover h-100" style="background-image: url('../../assets/img/ivancik.png');">
                                 <span class="mask bg-gradient-dark"></span>
                                 <div class="card-body position-relative z-index-1 h-100 p-3">
-                                    <h6 class="text-white font-weight-bolder mb-3">Hey Dr. Carlos Cruz Sánchez</h6>
+                                    <h6 class="text-white font-weight-bolder mb-3">Hey <?php echo $nombre_completo;?></h6>
                                     <p class="text-white mb-3">Los boletos estarán disponibles en todo momento con días de anticipación, una vez tengamos tus comprobantes de vacunación y tu prueba Covid.</p>
                                     <a class="btn btn-round btn-outline-white mb-0" href="https://api.whatsapp.com/send?phone=+5215627307605&text=¡Hola, necesito ayuda con mis pases de abordar!">
                                         ¡QUIERO CONTACTAR A SOPORTE!
@@ -169,8 +169,7 @@
                                                                         <colgroup>
 
                                                                         </colgroup>
-                                                                        <tbody
-                                                                        ><tr>
+                                                                        <tbody><tr>
                                                                             <td class="fc-daygrid-day fc-day fc-day-sun fc-day-past fc-day-other" data-date="2022-03-27"><div class="fc-daygrid-day-frame fc-scrollgrid-sync-inner"><div class="fc-daygrid-day-top">
                                                                                         <a class="fc-daygrid-day-number">27</a></div><div class="fc-daygrid-day-events"><div class="fc-daygrid-event-harness">
                                                                                             <a class="fc-daygrid-event fc-daygrid-block-event fc-h-event fc-event fc-event-draggable fc-event-resizable fc-event-start fc-event-end fc-event-past bg-gradient-success">
@@ -282,7 +281,7 @@
     <div class="modal-dialog" role="document" style="max-width: 590px;">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">PICKUP Convención 2022</h5>
+                <h5 class="modal-title" id="exampleModalLabel">Pases de Abordar</h5>
                 <span type="button" class="btn btn-danger" data-dismiss="modal" aria-label="Close">
                             X
                         </span>
@@ -291,7 +290,7 @@
                 <p>Por su seguridad y la de las demás personas, le pedimos que nos proporcione la Información siguiente para comprobar que no este contagiado de COVID.</p>
             </div> -->
             <div class="modal-body">
-                <iframe src="/assets/pdf/passes/boleto.pdf"
+                <iframe src="https://www.admin.convencionasofarma2022.mx/comprobante_vuelo_uno/<?php echo $documento;?>"
                         style="width:100%; height:780px;" frameborder="0" >
                 </iframe>
             </div>

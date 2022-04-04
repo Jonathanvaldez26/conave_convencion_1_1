@@ -66,11 +66,18 @@ html;
 html;
 
         $pases_abordar = PasesAbordarDao::getCount($_SESSION['utilerias_asistentes_id']);
+
+        $documento = PasesAbordarDao::getDocAsist($_SESSION['utilerias_asistentes_id'])['url'];
+        $nombre_completo = PasesAbordarDao::getDocAsist($_SESSION['utilerias_asistentes_id'])['nombre_completo'];
+        // var_dump($nombre_completo);
         
         if($pases_abordar['count'] >= 1 ){
             //Vista principal
+            View::set('nombre_completo',$nombre_completo);
+            View::set('documento',$documento);
             View::render("passes_all");
         }else{
+            View::set('documento',$documento);
             View::set('header',$this->_contenedor->header($extraHeader));
             View::set('footer',$this->_contenedor->footer($extraFooter));
             View::render("passes_work");
