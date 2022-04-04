@@ -141,7 +141,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-xl-5 col-lg-7 mt-lg-0 mt-4">
+            <div class="col-xl-5 col-lg-7 mt-lg-0 mt-4" hidden>
                 <div class="row">
                     <div class="col-12">
                         <div class="card widget-calendar h-100">
