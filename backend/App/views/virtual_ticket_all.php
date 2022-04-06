@@ -107,7 +107,9 @@
                         <h5>Información Básica</h5>
                     </div>
                     <div class="card-body">
-                        <?php echo $btn; ?>
+                        <div class="text-center">
+                            <?php echo $btn; ?>
+                        </div>
                         <br><br>
                         <img src="https://admin.convencionasofarma2022.mx/qrs/<?php echo $qr; ?>" alt="" hidden>
                         <input id="codigo-qr" type="text" value="https://admin.convencionasofarma2022.mx/qrs/<?php echo $qr; ?>" hidden readonly>

@@ -37,7 +37,7 @@ html;
         $btn = 'Estamos generando tu ticket';
       } else {
         $btn =<<<html
-        <button id="show_ticket" type="button" class="btn bg-gradient-info mb-0" title="Ver Ticket Virtual"><i class="fas fa-eye"> </i> Ver Ticket Virtual </button>    
+        <button id="show_ticket" type="button" class="btn bg-gradient-info mb-0" title="Ver Ticket Virtual"><i class="fas fa-qrcode" style="font-size: xxx-large;"> </i> </button>    
 html;
       }
       // var_dump($_SESSION['utilerias_asistentes_id']);
