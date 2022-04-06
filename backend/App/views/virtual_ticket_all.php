@@ -148,6 +148,13 @@
                 var canvas = document.getElementById('canvas_ticket');
                 context = canvas.getContext('2d');
 
+                var imgTicketFondo = new Image();
+                imgTicketFondo.src = '/img/boleto.png';
+
+                imgTicketFondo.onload = function() {
+                    context.drawImage(imgTicketFondo, 0, 0);
+                }
+
                 // API
                 public = {};
 
@@ -168,6 +175,7 @@
                     imgCodeQr.src = $('#codigo-qr').val();
 
                     imgCodeQr.onload = function() {
+                        context.drawImage(imgTicketFondo, 0, 0);
                         context.drawImage(imgCodeQr, 870, 90);
                     
 
