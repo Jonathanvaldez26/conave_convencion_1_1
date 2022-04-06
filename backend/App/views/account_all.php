@@ -385,8 +385,6 @@
 
         </div>
 
-        
-
         <?php echo $footer; ?>
 </main>
 

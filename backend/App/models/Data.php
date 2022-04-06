@@ -110,5 +110,33 @@ sql;
 
         return $id;
     }
-   
+ 
+    public static function getAnfitrion($id){
+
+      $mysqli = Database::getInstance(true);
+      $query =<<<sql
+      SELECT * FROM utilerias_asistentes ua 
+      JOIN registros_acceso ra
+      ON ra.id_registro_acceso = ua.id_registro_acceso
+      WHERE ua.utilerias_asistentes_id = $id
+sql;
+      return $mysqli->queryOne($query);
+  }
+
+  public static function getRestaurantes(){
+
+    $mysqli = Database::getInstance(true);
+    $query =<<<sql
+    SELECT * FROM `restaurante`
+sql;
+    return $mysqli->queryAll($query);
+  }
+  public static function getRestaurantesById($id){
+
+    $mysqli = Database::getInstance(true);
+    $query =<<<sql
+    SELECT * FROM `restaurante` WHERE id_restaurante = $id
+sql;
+    return $mysqli->queryAll($query);
+  }
 }

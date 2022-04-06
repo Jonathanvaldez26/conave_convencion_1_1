@@ -6,6 +6,10 @@ use \Core\View;
 use \Core\MasterDom;
 use \App\controllers\Contenedor;
 use \Core\Controller;
+use \App\models\Login as LoginDao;
+use \App\models\Register as RegisterDao;
+use \App\models\LineaGeneral as LineaGeneralDao;
+use \App\models\Data as DataDao;
 
 class Dinners extends Controller{
 
@@ -33,6 +37,21 @@ class Dinners extends Controller{
         }
       </style>
 html;
+
+      $anfitrion = DataDao::getAnfitrion($_SESSION['utilerias_asistentes_id']);
+      $restaurantes = DataDao::getRestaurantes();
+      // var_dump($restaurantes);
+      $restaurante = '';
+
+      foreach ($restaurantes as $key => $value) {
+        $restaurante .=<<<html
+        <option value="{$value['id_restaurante']}">{$value['nombre']}</option>
+html;
+      }
+
+      View::set('anfitrion',$anfitrion);
+      View::set('restaurante',$restaurante);
+      View::set('restaurantes',$restaurantes);
       View::set('header',$this->_contenedor->header($extraHeader));
       View::set('footer',$this->_contenedor->footer($extraFooter));
       View::render("dinner_work");

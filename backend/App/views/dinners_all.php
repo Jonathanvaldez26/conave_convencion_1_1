@@ -61,7 +61,7 @@
                         <h5 class="mb-2">Cenas</h5>
                         <p class="mb-0">Registrate como anfitrion e invita a tus amigos y disfruta de lo que tenemos preparado para ti.</p>
                     </div>
-                    <div class="card-body p-3">
+                    <!-- <div class="card-body p-3">
                         <div class="row">
                             <div class="col-lg-2 col-12 text-center">
                                 <div class="border-dashed border-1 border-secondary border-radius-md py-3">
@@ -231,6 +231,52 @@
                                 </div>
                             </div>
                         </div>
+                    </div> -->
+                    <div class="card-body">
+                        <form action="" method="post" id="form-cenas">
+                            <div class="row mx-5">
+                                <div class="col-12">
+                                    <h4>Anfitrion:</h4>
+                                    <h5><?php echo $anfitrion['nombre'].' '.$anfitrion['segundo_nombre'].' '.$anfitrion['apellido_paterno'].' '.$anfitrion['apellido_materno'];?></h5>
+                                    <br>
+                                    <h4>Restaurante:</h4>
+                                    <div class="row">
+                                        <div class="col-5">
+                                            <select class="form-control" name="restaurantes" id="restaurantes" required>
+                                                <option selected disabled>Selecciona un restaurante</option>
+                                                <?php echo $restaurante;?>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <br>
+                                    <h4>Numero de invitados:</h4>
+                                    <div class="row">
+                                        <div class="col-5">
+                                            <input class="form-control" required type="number" placeholder="5" min="0" max="5" name="capacidad" id="capacidad">
+                                        </div>
+                                    </div>
+                                    <br>
+                                    <h4>Fecha</h4>
+                                    <div class="row">
+                                        <div class="col-5">
+                                            <input class="form-control" required type="date" placeholder="5" name="capacidad" id="capacidad">
+                                        </div>
+                                    </div>
+
+                                    <br>
+                                    <h4>Hora</h4>
+                                    <div class="row">
+                                        <div class="col-5">
+                                            <input class="form-control" required type="time" placeholder="5" name="capacidad" id="capacidad">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <br>
+                            <div class="mx-5">
+                                <button class="btn bg-gradient-success" type="submit">Agregar</button>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
