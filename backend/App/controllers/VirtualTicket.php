@@ -43,9 +43,12 @@ html;
       View::set('btn',$btn);
       View::set('header',$this->_contenedor->header($extraHeader));
       View::set('footer',$this->_contenedor->footer($extraFooter));
-      // View::render("ticket_work");
-      View::render("virtual_ticket_all");
-
+      // 
+      if ($qr == NULL || $qr == 'NULL' || $qr == '') {
+        View::render("ticket_work");
+      } else {
+        View::render("virtual_ticket_all");
+      }
     }
 
 }
