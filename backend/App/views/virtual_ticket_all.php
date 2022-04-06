@@ -109,8 +109,8 @@
                     <div class="card-body">
                         <?php echo $btn; ?>
                         <br><br>
-                        <img src="/qrs/<?php echo $qr; ?>.png" alt="" hidden>
-                        <input id="codigo-qr" type="text" value="/qrs/<?php echo $qr; ?>.png" hidden readonly>
+                        <img src="https://admin.convencionasofarma2022.mx/qrs/<?php echo $qr; ?>" alt="" hidden>
+                        <input id="codigo-qr" type="text" value="https://admin.convencionasofarma2022.mx/qrs/<?php echo $qr; ?>" hidden readonly>
                         <br><br>
                         <div class="col-md-12 col-12 text-center">
                             <div id="main_ticket" hidden>

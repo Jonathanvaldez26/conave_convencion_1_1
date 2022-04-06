@@ -46,6 +46,7 @@ html;
       // 
       if ($qr == NULL || $qr == 'NULL' || $qr == '') {
         View::render("ticket_work");
+		//View::render("virtual_ticket_all");
       } else {
         View::render("virtual_ticket_all");
       }
