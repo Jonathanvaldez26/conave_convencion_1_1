@@ -111,6 +111,8 @@
                         <br><br>
                         <img src="https://admin.convencionasofarma2022.mx/qrs/<?php echo $qr; ?>" alt="" hidden>
                         <input id="codigo-qr" type="text" value="https://admin.convencionasofarma2022.mx/qrs/<?php echo $qr; ?>" hidden readonly>
+                        <input id="nombre-canvas" type="text" value="<?php echo $nombre; ?>" hidden readonly>
+                        <input id="apellidos-canvas" type="text" value="<?php echo $apellidos; ?>" hidden readonly>
                         <br><br>
                         <div class="col-md-12 col-12 text-center">
                             <div id="main_ticket" hidden>
@@ -156,9 +158,9 @@
                     var imgTicketFondo = new Image();
                     imgTicketFondo.src = '/img/boleto.png';
 
-                    imgTicketFondo.onload = function() {
+                    // imgTicketFondo.onload = function() {
                         context.drawImage(imgTicketFondo, 0, 0);
-                    }
+                    // }
 
                     context = canvas.getContext('2d');
 
@@ -174,9 +176,15 @@
 
                     context = canvas.getContext('2d');
 
-                    // context.font="30pt Verdana";
-                    // context.fillStyle = "white";
-                    context.fillText("fillText",870,90);
+                    context.font="20pt Verdana";
+                    context.fillStyle = "white";
+
+                    context.fillText($('#nombre-canvas').val(),440, centerY-50);
+
+                    context.font="20pt Verdana";
+                    context.fillStyle = "white";
+
+                    context.fillText($('#apellidos-canvas').val(),440, centerY);
 
                 };
 

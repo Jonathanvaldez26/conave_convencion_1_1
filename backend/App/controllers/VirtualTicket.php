@@ -29,7 +29,10 @@ class VirtualTicket extends Controller{
 html;
 
       $qr = HomeDao::getQRById($_SESSION['utilerias_asistentes_id'])['qr'];
+      $data = HomeDao::getQRById($_SESSION['utilerias_asistentes_id']);
 
+      $nombre = $data['nombre'].' '.$data['segundo_nombre'];
+      $apellidos = $data['apellido_paterno'].' '.$data['apellido_materno'];
       if ($qr == NULL || $qr == 'NULL') {
         $btn = 'Estamos generando tu ticket';
       } else {
@@ -40,6 +43,8 @@ html;
       // var_dump($_SESSION['utilerias_asistentes_id']);
       // var_dump($qr);
       View::set('qr',$qr);
+      View::set('nombre',$nombre);
+      View::set('apellidos',$apellidos);
       View::set('btn',$btn);
       View::set('header',$this->_contenedor->header($extraHeader));
       View::set('footer',$this->_contenedor->footer($extraFooter));
