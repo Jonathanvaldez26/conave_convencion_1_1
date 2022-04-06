@@ -107,7 +107,16 @@
                         <h5>Información Básica</h5>
                     </div>
                     <div class="card-body">
-                        Estamos generando tu ticket
+                        <?php echo $btn; ?>
+                        <br><br>
+                        <img src="/qrs/<?php echo $qr; ?>.png" alt="" hidden>
+                        <input id="codigo-qr" type="text" value="/qrs/<?php echo $qr; ?>.png" hidden readonly>
+                        <br><br>
+                        <div class="col-md-12 col-12 text-center">
+                            <div id="main_ticket" hidden>
+                                <canvas id="canvas_ticket" width="1220" height="457" name="ticket-<?php echo $clave_user; ?>" alt="ticket-<?php echo $clave_user; ?>" style="background: white; width: -webkit-fill-available;"></canvas> <!--  background-image: url('/img/ticket.jpg'); -->
+                            </div>
+                        </div>
                         <!--<img src="../../assets/img/boleto.png" alt="bruce" class="w-100 border-radius-lg shadow-sm"> -->
                         <div class="row">
                             <div class="button-row d-flex mt-4 col-12">
@@ -128,5 +137,58 @@
 </main>
 
 
+    <script>
+        $(document).ready(function() {
+            // document.getElementById('main_ticket').removeAttribute('hidden');
+            // app.loadPicture();
 
+            var app = (function() {
+                var canvas = document.getElementById('canvas_ticket');
+                context = canvas.getContext('2d');
+
+                // API
+                public = {};
+
+                // Public methods goes here...
+
+                public.loadPicture = function() {
+
+                    var imgTicketFondo = new Image();
+                    imgTicketFondo.src = '/img/boleto.png';
+
+                    imgTicketFondo.onload = function() {
+                        context.drawImage(imgTicketFondo, 0, 0);
+                    }
+
+                    context = canvas.getContext('2d');
+
+                    var imgCodeQr = new Image();
+                    imgCodeQr.src = $('#codigo-qr').val();
+
+                    imgCodeQr.onload = function() {
+                        context.drawImage(imgCodeQr, 870, 90);
+                    }
+
+                    var centerX = canvas.width/2;
+                    var centerY = canvas.height/2;
+
+                    context = canvas.getContext('2d');
+
+                    // context.font="30pt Verdana";
+                    // context.fillStyle = "white";
+                    context.fillText("fillText",870,90);
+
+                };
+
+                return public;
+            }());
+
+            $('#show_ticket').on('click', function(event) {
+                // alert('Mostrar Ticket');
+                // console.log('asdasdasdas');
+                document.getElementById('main_ticket').removeAttribute('hidden');
+                app.loadPicture();
+            })
+        });
+    </script>
 

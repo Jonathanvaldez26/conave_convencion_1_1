@@ -76,5 +76,18 @@ sql;
       return $mysqli->queryAll($query);
     }
 
+    public static function getQRById($id){
+      $mysqli = Database::getInstance(true);
+      $query=<<<sql
+      SELECT ra.*, tv.* 
+      FROM registros_acceso ra
+      INNER JOIN utilerias_asistentes ua
+      ON  ra.id_registro_acceso = ua.id_registro_acceso
+      LEFT JOIN ticket_virtual tv
+      ON tv.id_ticket_virtual = ra.id_ticket_virtual
 
+      WHERE ua.utilerias_asistentes_id = '$id'
+sql;
+      return $mysqli->queryOne($query);
+  }
 }

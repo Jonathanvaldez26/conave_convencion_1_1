@@ -135,6 +135,9 @@ html;
         <script src="//cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
 html;
 
+        $qr = HomeDao::getQRById($_SESSION['utilerias_asistentes_id'])['qr'];
+        // var_dump($_SESSION['utilerias_asistentes_id']);
+        View::set('qr',$qr);
         View::set('active_pruebas_covid',$active_pruebas_covid);
         View::set('active_pase_abordar',$active_pase_abordar);
         View::set('tiene_talla',$tiene_talla);
@@ -231,7 +234,7 @@ html;
         <script src="//cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
 
 html;
-
+        
         View::set('header',$extraHeader);
         View::set('footer',$extraFooter);
         View::render("code");
