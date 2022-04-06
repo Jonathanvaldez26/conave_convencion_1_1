@@ -158,9 +158,9 @@
                     var imgTicketFondo = new Image();
                     imgTicketFondo.src = '/img/boleto.png';
 
-                    // imgTicketFondo.onload = function() {
+                    imgTicketFondo.onload = function() {
                         context.drawImage(imgTicketFondo, 0, 0);
-                    // }
+                    }
 
                     context = canvas.getContext('2d');
 
@@ -169,22 +169,23 @@
 
                     imgCodeQr.onload = function() {
                         context.drawImage(imgCodeQr, 870, 90);
+                    
+
+                        var centerX = canvas.width/2;
+                        var centerY = canvas.height/2;
+
+                        context = canvas.getContext('2d');
+
+                        context.font="20pt Verdana";
+                        context.fillStyle = "white";
+
+                        context.fillText($('#nombre-canvas').val(),430, centerY-50);
+
+                        context.font="20pt Verdana";
+                        context.fillStyle = "white";
+
+                        context.fillText($('#apellidos-canvas').val(),430, centerY);
                     }
-
-                    var centerX = canvas.width/2;
-                    var centerY = canvas.height/2;
-
-                    context = canvas.getContext('2d');
-
-                    context.font="20pt Verdana";
-                    context.fillStyle = "white";
-
-                    context.fillText($('#nombre-canvas').val(),440, centerY-50);
-
-                    context.font="20pt Verdana";
-                    context.fillStyle = "white";
-
-                    context.fillText($('#apellidos-canvas').val(),440, centerY);
 
                 };
 
