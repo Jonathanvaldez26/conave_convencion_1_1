@@ -140,6 +140,34 @@ sql;
     return $mysqli->queryAll($query);
   }
 
+  public static function getAfitrionesById($id){
+    $mysqli = Database::getInstance(true);
+    $query =<<<sql
+    SELECT a.*, ra.*,ua.*, r.nombre AS nombre_restaurante FROM anfitrion a
+    INNER JOIN utilerias_asistentes ua
+    ON ua.utilerias_asistentes_id = a.utilerias_asistentes_id
+    INNER JOIN registros_acceso ra
+    ON ra.id_registro_acceso = ua.id_registro_acceso
+    INNER JOIN restaurante r
+    ON r.id_restaurante = a.id_restaurante
+    WHERE a.utilerias_asistentes_id = $id
+sql;
+    return $mysqli->queryAll($query);
+  }
+
+  public static function getCountAfitrionesById($id){
+    $mysqli = Database::getInstance(true);
+    $query =<<<sql
+    SELECT Count(*) as cenas FROM anfitrion a
+    INNER JOIN utilerias_asistentes ua
+    ON ua.utilerias_asistentes_id = a.utilerias_asistentes_id
+    INNER JOIN registros_acceso ra
+    ON ra.id_registro_acceso = ua.id_registro_acceso
+    WHERE a.utilerias_asistentes_id = $id
+sql;
+    return $mysqli->queryOne($query);
+  }
+
   public static function getAnfitrionByUAId($id,$clave){
 
     $mysqli = Database::getInstance(true);

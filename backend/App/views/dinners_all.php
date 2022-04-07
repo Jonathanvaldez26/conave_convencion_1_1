@@ -233,15 +233,34 @@
                         </div>
                     </div> -->
                     <div class="card-body">
+                        <div class="row my-5" style="overflow: auto;">
+                            <h4>Mi Cena</h4>
+                            <table class="table align-items-center mb-0">
+                                <thead>
+                                    <tr>
+                                        <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Id</th>
+                                        <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Clave</th>
+                                        <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Nombre Anfitrion</th>
+                                        <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Fecha</th>
+                                        <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Hora</th>
+                                        <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Nombre del Restaurante</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <?php echo $cenas_anfitrion;?>
+                                </tbody>
+                            </table>
+                        </div>
+                        <?php echo $vista;?>
                         <form class="form-horizontal" id="add_dinner_form" action="" method="POST">
-                            <div class="row mx-5">
+                            <div class="row mx-0">
                                 <div class="col-12">
                                     <h4>Anfitrion:</h4>
-                                    <h5><?php echo $anfitrion['nombre'].' '.$anfitrion['segundo_nombre'].' '.$anfitrion['apellido_paterno'].' '.$anfitrion['apellido_materno'];?></h5>
+                                    <h5 class="badge bg-gradient-dark"><?php echo $anfitrion['nombre'].' '.$anfitrion['segundo_nombre'].' '.$anfitrion['apellido_paterno'].' '.$anfitrion['apellido_materno'];?></h5>
                                     <br>
                                     <h4>Restaurante:</h4>
                                     <div class="row">
-                                        <div class="col-5">
+                                        <div class="col-12 col-lg-5">
                                             <select class="form-control" name="restaurante" id="restaurante" required>
                                                 <option selected disabled>Selecciona un restaurante</option>
                                                 <?php echo $restaurante;?>
@@ -253,7 +272,7 @@
 
                                     <h4>Fecha</h4>
                                     <div class="row">
-                                        <div class="col-5">
+                                        <div class="col-12 col-lg-5">
                                             <input class="form-control" required type="date" placeholder="5" name="fecha" id="fecha">
                                         </div>
                                     </div>
@@ -261,7 +280,7 @@
                                     <br>
                                     <h4>Hora</h4>
                                     <div class="row">
-                                        <div class="col-5">
+                                        <div class="col-12 col-lg-5">
                                             <input class="form-control" required type="time" placeholder="5" name="hora" id="hora">
                                         </div>
                                     </div>
@@ -269,7 +288,7 @@
                                     
                                     <h4>Numero de invitados:</h4>
                                     <div class="row">
-                                        <div class="col-5">
+                                        <div class="col-12 col-lg-5">
                                             <input class="form-control" required type="number" placeholder="5" min="0" max="5" name="cantidad" id="cantidad">
                                         </div>
                                     </div>
@@ -278,7 +297,7 @@
                                     <h4 id="title_invitados" hidden>Invitados<br></h4>
                                     <!-- invitado 1 -->
                                     <div class="row invitados1" id="invitados1" name="invitados1" hidden>
-                                        <div class="col-5 ">
+                                        <div class="col-12 col-lg-5 ">
                                             <select class="form-control select_2" name="asistente1" id="asistente1"  required>
                                                 <option selected disabled>Selecciona un Asistente</option>
                                                 <?php echo $asistente;?>
@@ -290,7 +309,7 @@
                                     <br>
                                     <!-- invitado 2 -->
                                     <div class="row invitados2" id="invitados2" name="invitados2" hidden>
-                                        <div class="col-5 ">
+                                        <div class="col-12 col-lg-5 ">
                                             <select class="form-control select_2" name="asistente2" id="asistente2"  required>
                                                 <option selected disabled>Selecciona un Asistente</option>
                                                 <?php echo $asistente;?>
@@ -302,7 +321,7 @@
                                     <br>
                                     <!-- invitado 3 -->
                                     <div class="row invitados3" id="invitados3" name="invitados3" hidden>
-                                        <div class="col-5 ">
+                                        <div class="col-12 col-lg-5 ">
                                             <select class="form-control select_2" name="asistente3" id="asistente3"  required>
                                                 <option selected disabled>Selecciona un Asistente</option>
                                                 <?php echo $asistente;?>
@@ -314,7 +333,7 @@
                                     <br>
                                     <!-- invitado 4 -->
                                     <div class="row invitados4" id="invitados4" name="invitados4" hidden>
-                                        <div class="col-5 ">
+                                        <div class="col-12 col-lg-5 ">
                                             <select class="form-control select_2" name="asistente4" id="asistente4"  required>
                                                 <option selected disabled>Selecciona un Asistente</option>
                                                 <?php echo $asistente;?>
@@ -326,7 +345,7 @@
                                     <br>
                                     <!-- invitado 5 -->
                                     <div class="row invitados5" id="invitados5" name="invitados5" hidden>
-                                        <div class="col-5 ">
+                                        <div class="col-12 col-lg-5 ">
                                             <select class="form-control select_2" name="asistente5" id="asistente5"  required>
                                                 <option selected disabled>Selecciona un Asistente</option>
                                                 <?php echo $asistente;?>

@@ -71,19 +71,156 @@ html;
 html;
       }
 
+      $cenas_num = DataDao::getAfitrionesById($_SESSION['utilerias_asistentes_id'])['cenas'];
+      $vista = '';
+
+      if ($cenas_num == 0) {
+        $vista =<<<html
+      <h3 class="m-5">Ya posee una cena agendada el día de hoy</h3>
+html;
+      } else {
+        $vista =<<<html
+        <form class="form-horizontal" id="add_dinner_form" action="" method="POST">
+          <div class="row mx-5">
+              <div class="col-12">
+                  <h4>Anfitrion:</h4>
+                  <h5 class="badge bg-gradient-dark"><?php echo {$anfitrion['nombre']}.' '.{$anfitrion['segundo_nombre']}.' '.{$anfitrion['apellido_paterno']}.' '.{$anfitrion['apellido_materno']};?></h5>
+                  <br>
+                  <h4>Restaurante:</h4>
+                  <div class="row">
+                      <div class="col-12"col-lg-5>
+                          <select class="form-control" name="restaurante" id="restaurante" required>
+                              <option selected disabled>Selecciona un restaurante</option>
+                          </select>
+                      </div>
+                  </div>
+                  <br>
+
+                  <h4>Fecha</h4>
+                  <div class="row">
+                      <div class="col-12"col-lg-5>
+                          <input class="form-control" required type="date" placeholder="5" name="fecha" id="fecha">
+                      </div>
+                  </div>
+
+                  <br>
+                  <h4>Hora</h4>
+                  <div class="row">
+                      <div class="col-12"col-lg-5>
+                          <input class="form-control" required type="time" placeholder="5" name="hora" id="hora">
+                      </div>
+                  </div>
+                  <br>
+                  
+                  <h4>Numero de invitados:</h4>
+                  <div class="row">
+                      <div class="col-12"col-lg-5>
+                          <input class="form-control" required type="number" placeholder="5" min="0" max="5" name="cantidad" id="cantidad">
+                      </div>
+                  </div>
+                  <br>
+
+                  <h4 id="title_invitados" hidden>Invitados<br></h4>
+                  <!-- invitado 1 -->
+                  <div class="row invitados1" id="invitados1" name="invitados1" hidden>
+                      <div class="col-12 col-lg-5">
+                          <select class="form-control select_2" name="asistente1" id="asistente1"  required>
+                              <option selected disabled>Selecciona un Asistente</option>
+
+                          </select>
+                      </div>
+                      <br>
+                  </div>
+
+                  <br>
+                  <!-- invitado 2 -->
+                  <div class="row invitados2" id="invitados2" name="invitados2" hidden>
+                      <div class="col-12 col-lg-5">
+                          <select class="form-control select_2" name="asistente2" id="asistente2"  required>
+                              <option selected disabled>Selecciona un Asistente</option>
+
+                          </select>
+                      </div>
+                      <br>
+                  </div>
+
+                  <br>
+                  <!-- invitado 3 -->
+                  <div class="row invitados3" id="invitados3" name="invitados3" hidden>
+                      <div class="col-12 col-lg-5">
+                          <select class="form-control select_2" name="asistente3" id="asistente3"  required>
+                              <option selected disabled>Selecciona un Asistente</option>
+
+                          </select>
+                      </div>
+                      <br>
+                  </div>
+
+                  <br>
+                  <!-- invitado 4 -->
+                  <div class="row invitados4" id="invitados4" name="invitados4" hidden>
+                      <div class="col-12 col-lg-5">
+                          <select class="form-control select_2" name="asistente4" id="asistente4"  required>
+                              <option selected disabled>Selecciona un Asistente</option>
+
+                          </select>
+                      </div>
+                      <br>
+                  </div>
+
+                  <br>
+                  <!-- invitado 5 -->
+                  <div class="row invitados5" id="invitados5" name="invitados5" hidden>
+                      <div class="col-12 col-lg-5">
+                          <select class="form-control select_2" name="asistente5" id="asistente5"  required>
+                              <option selected disabled>Selecciona un Asistente</option>
+
+                          </select>
+                      </div>
+                      <br>
+                  </div>
+
+                  <br>
+              </div>
+          </div>
+          <br>
+          <div class="mx-5">
+              <button class="btn bg-gradient-success" type="submit">Agregar</button>
+          </div>
+      </form>
+html;
+      }
+
+      $cenas = DataDao::getAfitrionesById($_SESSION['utilerias_asistentes_id']);
+      $cenas_anfitrion = '';
+      foreach ($cenas as $key => $value) {
+        $cenas_anfitrion.=<<<html
+        <tr>
+          <td class="text-dark text-center">{$value['id_anfitrion']}</td>
+          <td class="text-dark text-center">{$value['clave']}</td>
+          <td class="text-dark text-center"><span class="badge bg-gradient-dark">{$value['nombre']} {$value['segundo_nombre']} {$value['apellido_paterno']} {$value['apellido_materno']}</span></td>
+          <td class="text-dark text-center">{$value['fecha']}</td>
+          <td class="text-dark text-center">{$value['hora']}</td>
+          <td class="text-dark text-center">{$value['nombre_restaurante']}</td>
+        <tr>
+html;
+      }
+
       // $cupo = DataDao::getNumCupo();
 
       View::set('anfitrion',$anfitrion);
       View::set('restaurante',$restaurante);
       View::set('restaurantes',$restaurantes);
+      View::set('vista',$vista);
       View::set('rest',$rest);
       View::set('rests',$rests);
       View::set('asistente',$asistente);
       View::set('asistentes',$asistentes);
-      // View::set('cupo',$cupo);
+      View::set('cenas_anfitrion',$cenas_anfitrion);
+      View::set('cenas_num',$cenas_num);
       View::set('header',$this->_contenedor->header($extraHeader));
       View::set('footer',$this->_contenedor->footer($extraFooter));
-      View::render("dinner_work");
+      View::render("dinners_all");
     }
 
     public function agregarCena(){

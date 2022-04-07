@@ -317,7 +317,7 @@
 
                     <!-- </div>
                 <div class="row mt-4"> -->
-                    <div class="col-md-6 mb-4 mt-md-0 mt-4">
+                    <!-- <div class="col-md-6 mb-4 mt-md-0 mt-4">
                         <div class="card card-link">
                             <a href="/Dinners/">
                                 <div class="card-body text-center">
@@ -329,7 +329,7 @@
                                 </div>
                             </a>
                         </div>
-                    </div>
+                    </div> -->
                     <div class="col-md-6 mb-4">
                         <a type="button" data-toggle="modal" data-target="#ver-pickup">
                             <div class="card card-link">
