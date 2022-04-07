@@ -127,7 +127,7 @@ sql;
 
     $mysqli = Database::getInstance(true);
     $query =<<<sql
-    SELECT * FROM `restaurante`
+    SELECT * FROM restaurante
 sql;
     return $mysqli->queryAll($query);
   }
@@ -135,8 +135,107 @@ sql;
 
     $mysqli = Database::getInstance(true);
     $query =<<<sql
-    SELECT * FROM `restaurante` WHERE id_restaurante = $id
+    SELECT * FROM restaurante WHERE id_restaurante = $id
 sql;
     return $mysqli->queryAll($query);
   }
+
+  public static function getAnfitrionByUAId($id,$clave){
+
+    $mysqli = Database::getInstance(true);
+    $query =<<<sql
+    SELECT * FROM anfitrion WHERE utilerias_asistentes_id = $id and clave = '$clave'
+sql;
+    return $mysqli->queryAll($query);
+  }
+
+  public static function getAsistentes(){
+
+    $mysqli = Database::getInstance(true);
+    $query =<<<sql
+    SELECT * FROM registros_acceso ra
+    INNER JOIN utilerias_asistentes ua
+    ON ra.id_registro_acceso = ua.id_registro_acceso
+sql;
+    return $mysqli->queryAll($query);
+  }
+
+  public static function getNumCupo($id){
+
+    $mysqli = Database::getInstance(true);
+    $query =<<<sql
+    SELECT count(*) as numero_ocupantes_en_restaurante FROM reservacion re 
+    INNER JOIN anfitrion an
+    ON re.id_anfitrion = an.id_anfitrion
+    WHERE an.id_restaurante = $id
+sql;
+    return $mysqli->queryOne($query);
+  }
+
+  public static function insertAnfitrion($info)
+    {
+        $mysqli = Database::getInstance();
+        $query = <<<sql
+        INSERT INTO anfitrion 
+              (clave, 
+              utilerias_asistentes_id, 
+              cantidad, 
+              fecha, 
+              hora, 
+              fecha_alta, 
+              id_restaurante,status)
+        VALUES(
+              :clave_anfitrion,
+              :id_para_anfitrion,
+              :cantidad,
+              :fecha,
+              :hora,
+              NOW(),
+              :id_restaurante,1)                        
+sql;
+
+        $parametros = array(
+            ':id_restaurante' => $info->_id_restaurante,
+            ':clave_anfitrion' => $info->_clave_anfitrion,
+            ':id_para_anfitrion' => $info->_id_para_anfitrion,
+            ':cantidad' => $info->_cantidad,
+            ':fecha' => $info->_fecha,
+            ':hora' => $info->_hora,
+        );
+
+        $id = $mysqli->insert($query, $parametros);
+        $accion = new \stdClass();
+        $accion->_sql = $query;
+        $accion->_parametros = $parametros;
+        $accion->_id = $id;
+
+        return $id;
+    }
+
+    public static function insertReservacion($info)
+    {
+        $mysqli = Database::getInstance();
+        $query = <<<sql
+        INSERT INTO reservacion 
+              (clave, 
+              id_anfitrion, 
+              utilerias_asistentes_id)
+        VALUES(:clave_reservacion,
+              :id_anfitrion,:asistente)                        
+sql;
+
+        $parametros = array(
+            ':clave_reservacion' => $info->_clave_reservacion,
+            ':asistente' => $info->_asistente,
+            ':id_anfitrion' => $info->_id_anfitrion,
+        );
+
+        $id = $mysqli->insert($query, $parametros);
+        $accion = new \stdClass();
+        $accion->_sql = $query;
+        $accion->_parametros = $parametros;
+        $accion->_id = $id;
+
+        return $id;
+    }
 }

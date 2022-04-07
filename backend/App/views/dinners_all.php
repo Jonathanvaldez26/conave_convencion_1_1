@@ -233,7 +233,7 @@
                         </div>
                     </div> -->
                     <div class="card-body">
-                        <form action="" method="post" id="form-cenas">
+                        <form class="form-horizontal" id="add_dinner_form" action="" method="POST">
                             <div class="row mx-5">
                                 <div class="col-12">
                                     <h4>Anfitrion:</h4>
@@ -242,24 +242,18 @@
                                     <h4>Restaurante:</h4>
                                     <div class="row">
                                         <div class="col-5">
-                                            <select class="form-control" name="restaurantes" id="restaurantes" required>
+                                            <select class="form-control" name="restaurante" id="restaurante" required>
                                                 <option selected disabled>Selecciona un restaurante</option>
                                                 <?php echo $restaurante;?>
                                             </select>
                                         </div>
                                     </div>
                                     <br>
-                                    <h4>Numero de invitados:</h4>
-                                    <div class="row">
-                                        <div class="col-5">
-                                            <input class="form-control" required type="number" placeholder="5" min="0" max="5" name="capacidad" id="capacidad">
-                                        </div>
-                                    </div>
-                                    <br>
+
                                     <h4>Fecha</h4>
                                     <div class="row">
                                         <div class="col-5">
-                                            <input class="form-control" required type="date" placeholder="5" name="capacidad" id="capacidad">
+                                            <input class="form-control" required type="date" placeholder="5" name="fecha" id="fecha">
                                         </div>
                                     </div>
 
@@ -267,9 +261,80 @@
                                     <h4>Hora</h4>
                                     <div class="row">
                                         <div class="col-5">
-                                            <input class="form-control" required type="time" placeholder="5" name="capacidad" id="capacidad">
+                                            <input class="form-control" required type="time" placeholder="5" name="hora" id="hora">
                                         </div>
                                     </div>
+                                    <br>
+                                    
+                                    <h4>Numero de invitados:</h4>
+                                    <div class="row">
+                                        <div class="col-5">
+                                            <input class="form-control" required type="number" placeholder="5" min="0" max="5" name="cantidad" id="cantidad">
+                                        </div>
+                                    </div>
+                                    <br>
+
+                                    <h4 id="title_invitados" hidden>Invitados<br></h4>
+                                    <!-- invitado 1 -->
+                                    <div class="row invitados1" id="invitados1" name="invitados1" hidden>
+                                        <div class="col-5 ">
+                                            <select class="form-control select_2" name="asistente1" id="asistente1"  required>
+                                                <option selected disabled>Selecciona un Asistente</option>
+                                                <?php echo $asistente;?>
+                                            </select>
+                                        </div>
+                                        <br>
+                                    </div>
+
+                                    <br>
+                                    <!-- invitado 2 -->
+                                    <div class="row invitados2" id="invitados2" name="invitados2" hidden>
+                                        <div class="col-5 ">
+                                            <select class="form-control select_2" name="asistente2" id="asistente2"  required>
+                                                <option selected disabled>Selecciona un Asistente</option>
+                                                <?php echo $asistente;?>
+                                            </select>
+                                        </div>
+                                        <br>
+                                    </div>
+
+                                    <br>
+                                    <!-- invitado 3 -->
+                                    <div class="row invitados3" id="invitados3" name="invitados3" hidden>
+                                        <div class="col-5 ">
+                                            <select class="form-control select_2" name="asistente3" id="asistente3"  required>
+                                                <option selected disabled>Selecciona un Asistente</option>
+                                                <?php echo $asistente;?>
+                                            </select>
+                                        </div>
+                                        <br>
+                                    </div>
+
+                                    <br>
+                                    <!-- invitado 4 -->
+                                    <div class="row invitados4" id="invitados4" name="invitados4" hidden>
+                                        <div class="col-5 ">
+                                            <select class="form-control select_2" name="asistente4" id="asistente4"  required>
+                                                <option selected disabled>Selecciona un Asistente</option>
+                                                <?php echo $asistente;?>
+                                            </select>
+                                        </div>
+                                        <br>
+                                    </div>
+
+                                    <br>
+                                    <!-- invitado 5 -->
+                                    <div class="row invitados5" id="invitados5" name="invitados5" hidden>
+                                        <div class="col-5 ">
+                                            <select class="form-control select_2" name="asistente5" id="asistente5"  required>
+                                                <option selected disabled>Selecciona un Asistente</option>
+                                                <?php echo $asistente;?>
+                                            </select>
+                                        </div>
+                                        <br>
+                                    </div>
+
+                                    <br>
                                 </div>
                             </div>
                             <br>
@@ -285,6 +350,189 @@
     <?php echo $footer; ?>
 </main>
 
+<script>
+     $(document).ready(function() {
+         
+        let inv = $('.invitados1').html();
+        // $('.select_2').select2();
+
+        $('#cantidad').on("change",function(event) {
+            let cant = $('#cantidad').val();
+            console.log(cant);
+
+            if (cant == 0) {
+                // $('.invitados').append(inv);
+                $('.invitados1').prop('hidden',true);
+                $('.invitados2').prop('hidden',true);
+                $('.invitados3').prop('hidden',true);
+                $('.invitados4').prop('hidden',true);
+                $('.invitados5').prop('hidden',true);
+                $('#title_invitados').prop('hidden',true);
+            } else if (cant == 1) {
+                // $('.invitados').append(inv);
+                $('.invitados1').prop('hidden',false);
+                $('.invitados2').prop('hidden',true);
+                $('.invitados3').prop('hidden',true);
+                $('.invitados4').prop('hidden',true);
+                $('.invitados5').prop('hidden',true);
+                $('#title_invitados').prop('hidden',false);
+            } else if (cant == 2) {
+                $('.invitados2').prop('hidden',false);
+                $('.invitados3').prop('hidden',true);
+                $('.invitados4').prop('hidden',true);
+                $('.invitados5').prop('hidden',true);
+                $('#title_invitados').prop('hidden',false);
+            } else if (cant == 3) {
+                $('.invitados3').prop('hidden',false);
+                $('.invitados4').prop('hidden',true);
+                $('.invitados5').prop('hidden',true);
+                $('#title_invitados').prop('hidden',false);
+            }else if (cant == 4) {
+                $('.invitados4').prop('hidden',false);
+                $('.invitados5').prop('hidden',true);
+                $('#title_invitados').prop('hidden',false);
+            }else if (cant == 5) {
+                $('.invitados5').prop('hidden',false);
+                $('#title_invitados').prop('hidden',false);
+            }
+        })
+
+        
+        
+        $("#add_dinner_form").on("submit", function(event) {
+            // event.preventDefault();
+
+            var formData = new FormData(document.getElementById("add_dinner_form"));
+            for (var value of formData.values()) {
+              // console.log(value);
+            }
+
+            $.ajax({
+                url: "/Dinners/agregarCena",
+                type: "POST",
+                data: formData,
+                // dataType: 'json',
+                beforeSend: function() {
+                    console.log("Procesando....");
 
 
+                },
+                success: function(respuesta) {
+                    console.log(respuesta.status);
+                    if (respuesta.status == 'success') {
+                        swal("¡Se agregó la cena correctamente!", "", "success").
+                        then((value) => {
+                            window.location.reload();
+                        });
+                    } else {
+                        swal("¡No se pudo agregar ninguna cena!", "", "warning").
+                        then((value) => {
+                           // window.location.replace("/Account/")
+                        });
+                    }
+                },
+                error: function(respuesta) {
+                    console.log(respuesta.status);
+                }
 
+            });
+        });
+
+        $(document).on('change', '#file-input', function(e) {
+            $("#form_upload_image").submit();
+        });
+
+        $("#form_upload_image").on("submit", function(event) {
+            event.preventDefault();
+            // alert("funciona");
+
+            var formData = new FormData(document.getElementById("form_upload_image"));
+            console.log(formData);
+
+            $.ajax({
+                url: "/Account/uploadImage",
+                type: "POST",
+                data: formData,
+                dataType: "json",
+                cache: false,
+                contentType: false,
+                processData: false,
+                beforeSend: function() {
+                    console.log("Procesando....");
+
+
+                },
+                success: function(respuesta) {
+                    console.log(respuesta);
+                    if(respuesta.status == "success"){
+                        //location.reload();
+                        $("#img-user").attr("src","../../../img/users_conave/"+respuesta.img);
+                    }
+                   
+                },
+                error: function(respuesta) {
+                    console.log(respuesta);
+                }
+
+            });
+        });
+        $('#select_alergico').select2();
+        $('#select_alergico').on("change", function() {
+            $('#alergia_otro').removeAttr('required');
+        
+            var valores = $(this).val();
+        
+            console.log(valores);
+            if (valores != null) {
+                if (valores.length) {
+        
+                    console.log(valores.length);
+        
+                    $.each(valores, function(key, value) {
+                        if (value == 'otros') {
+                            console.log(value);
+                            $(".cont_alergia_otro").css('display', 'block');
+                            $("#alergia_otro").attr('required', 'required');
+                            $("#alergia_otro").val("");
+                        } else {
+                            $(".cont_alergia_otro").css('display', 'none');
+        
+        
+                        }
+        
+                    });
+        
+                }
+            } else {
+                $(".cont_alergia_otro").css('display', 'none');
+            }
+        });
+        
+        $('input:radio[name="confirm_alergia"]').change(function() {
+            if ($("#confirm_alergia_no").is(':checked')) {
+                $(".medicamento_cual").css("display", "none");
+                $("#alergia_medicamento_cual").val("");
+                $('#alergia_medicamento_cual').removeAttr('required');
+            }
+        
+            if ($("#confirm_alergia_si").is(':checked')) {
+                $(".medicamento_cual").css("display", "block");
+                $("#alergia_medicamento_cual").attr('required', 'required');
+            }
+        });
+        
+        $('input:radio[name="restricciones_alimenticias"]').change(function() {
+            if ($("#res_ali_5").is(':checked')) {
+                $(".restricciones_alimenticias").css("display", "block");
+                $("#restricciones_alimenticias_cual").val("");
+                $("#restricciones_alimenticias_cual").attr('required', 'required');
+            } else {
+                $(".restricciones_alimenticias").css("display", "none");
+                $('#restricciones_alimenticias_cual').removeAttr('required');
+            }
+        
+        });
+       
+
+    });
+</script>

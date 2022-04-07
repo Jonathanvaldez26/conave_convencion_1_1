@@ -28,6 +28,11 @@ class Dinners extends Controller{
 
     public function index() {
      $extraHeader =<<<html
+     <script src="/js/jquery.min.js"></script>
+      <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+      <script src="//unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+      <script src="//cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
       <style>
         .logo{
           width:100%;
@@ -49,12 +54,132 @@ html;
 html;
       }
 
+      $asistentes = DataDao::getAsistentes();
+      $asistente = '';
+
+      foreach ($asistentes as $key => $value) {
+        $asistente .=<<<html
+        <option value="{$value['utilerias_asistentes_id']}">{$value['nombre']} {$value['segundo_nombre']} {$value['apellido_paterno']} {$value['apellido_materno']} </option>
+html;
+      }
+
+      // $cupo = DataDao::getNumCupo();
+
       View::set('anfitrion',$anfitrion);
       View::set('restaurante',$restaurante);
       View::set('restaurantes',$restaurantes);
+      View::set('asistente',$asistente);
+      View::set('asistentes',$asistentes);
+      // View::set('cupo',$cupo);
       View::set('header',$this->_contenedor->header($extraHeader));
       View::set('footer',$this->_contenedor->footer($extraFooter));
-      View::render("dinner_work");
+      View::render("dinners_all");
     }
 
+    public function agregarCena(){
+
+      $documento = new \stdClass();
+      $documento2 = new \stdClass();
+      if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+
+        $id_para_anfitrion = $_SESSION['utilerias_asistentes_id'];
+        $id_restaurante = $_POST['restaurante'];
+        $clave_anfitrion = $this->generateRandomString(8);
+        $cantidad = $_POST['cantidad'];
+        $fecha = $_POST['fecha'];
+        $hora = $_POST['hora'];
+
+        $documento->_id_para_anfitrion = $id_para_anfitrion;
+        $documento->_id_restaurante = $id_restaurante;
+        $documento->_clave_anfitrion = $clave_anfitrion;
+        $documento->_cantidad = $cantidad;
+        $documento->_fecha = $fecha;
+        $documento->_hora = $hora;
+
+        $id = DataDao::insertAnfitrion($documento);
+        
+        if ($id) {
+            // echo "success";
+            
+              /////----------Documento2
+              $anfitrion = DataDao::getAnfitrionByUAId($_SESSION['utilerias_asistentes_id'],$clave_anfitrion);
+
+              $clave_reservacion = $this->generateRandomString(8);
+              $id_anfitrion = $anfitrion[0]['id_anfitrion'];
+
+              $asistente1 = $_POST['asistente1'];
+              $asistente2 = $_POST['asistente2'];
+              $asistente3 = $_POST['asistente3'];
+              $asistente4 = $_POST['asistente4'];
+              $asistente5 = $_POST['asistente5'];
+
+              $documento2->_clave_reservacion = $clave_reservacion;
+              $documento2->_id_anfitrion = $id_anfitrion;
+              
+              // var_dump($asistente1);
+              // var_dump($asistente2);
+              // var_dump($asistente3);
+              // var_dump($asistente4);
+              // var_dump($asistente5);
+              // $documento2->_asistente1 = $asistente1;
+              // $documento2->_asistente2 = $asistente2;
+              // $documento2->_asistente3 = $asistente3;
+              // $documento2->_asistente4 = $asistente4;
+              // $documento2->_asistente5 = $asistente5;
+
+              if ($asistente1 != NULL && $asistente1 != 'NULL'){
+                $asistente = $asistente1;
+                $documento2->_asistente = $asistente;
+                // var_dump($documento2);
+                $id_assist1 = DataDao::insertReservacion($documento2);
+              }
+
+              if ($asistente2 != NULL && $asistente2 != 'NULL'){
+                $asistente = $asistente2;
+                $documento2->_asistente = $asistente;
+                $id_assist2 = DataDao::insertReservacion($documento2);
+              }
+
+              if ($asistente3 != NULL && $asistente3 != 'NULL'){
+                $asistente = $asistente3;
+                $documento2->_asistente = $asistente;
+                $id_assist3 = DataDao::insertReservacion($documento2);
+              }
+
+              if ($asistente4 != NULL && $asistente4 != 'NULL'){
+                $asistente = $asistente4;
+                $documento2->_asistente = $asistente;
+                $id_assist4 = DataDao::insertReservacion($documento2);
+              }
+
+              if ($asistente5 != NULL && $asistente5 != 'NULL'){
+                $asistente = $asistente5;
+                $documento2->_asistente = $asistente;
+                $id_assist5 = DataDao::insertReservacion($documento2);
+              }
+
+              $cupo = DataDao::getNumCupo();
+
+              if ($id_assist1 || $id_assist2 || $id_assist3 || $id_assist4  || $id_assist5) {
+                  echo "success";
+                  //header("Location: /Home");
+              } else {
+                  echo "fail";
+                  // header("Location: /Home/");
+              }
+        } else {
+            echo "fail";
+            // header("Location: /Home/");
+        }
+       
+        
+      } else {
+        echo 'fail REQUEST';
+      }
+    }
+
+    function generateRandomString($length = 10)
+    {
+        return substr(str_shuffle("0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"), 0, $length);
+    }
 }
