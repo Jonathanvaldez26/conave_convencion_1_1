@@ -164,7 +164,7 @@ sql;
 
     $mysqli = Database::getInstance(true);
     $query =<<<sql
-    SELECT count(*) as numero_ocupantes_en_restaurante FROM reservacion re 
+    SELECT count(*) as num FROM reservacion re 
     INNER JOIN anfitrion an
     ON re.id_anfitrion = an.id_anfitrion
     WHERE an.id_restaurante = $id

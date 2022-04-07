@@ -248,6 +248,7 @@
                                             </select>
                                         </div>
                                     </div>
+                                    <?php echo $rest;?>
                                     <br>
 
                                     <h4>Fecha</h4>
@@ -356,6 +357,13 @@
         let inv = $('.invitados1').html();
         // $('.select_2').select2();
 
+        $('#restaurante').on("change",function(event) {
+            console.log($('#restaurante').val());
+            
+        });
+
+        
+
         $('#cantidad').on("change",function(event) {
             let cant = $('#cantidad').val();
             console.log(cant);
@@ -400,7 +408,7 @@
         
         
         $("#add_dinner_form").on("submit", function(event) {
-            // event.preventDefault();
+            event.preventDefault();
 
             var formData = new FormData(document.getElementById("add_dinner_form"));
             for (var value of formData.values()) {
@@ -411,18 +419,41 @@
                 url: "/Dinners/agregarCena",
                 type: "POST",
                 data: formData,
-                // dataType: 'json',
+                cache: false,
+                contentType: false,
+                processData: false,
                 beforeSend: function() {
                     console.log("Procesando....");
 
 
                 },
                 success: function(respuesta) {
-                    console.log(respuesta.status);
-                    if (respuesta.status == 'success') {
+                    // console.log(respuesta.substr(0,7));
+                    let msg = respuesta.substr(0,7);
+                    let cupo = respuesta.substr(7,(respuesta.length)-respuesta.indexOf('/'))
+
+                    let id = $('#restaurante').val().toString();
+                    let capacidad = $('#'+id).val();
+                    // console.log(cupo);
+                    // console.log(capacidad);
+                    
+                    // if (cupo <= capacidad) {
+                    //     console.log('Aun hay lugar');
+                    // } else {
+                    //     msg = 'fail';
+                    //     console.log('No hay lugar');
+                    // }
+
+                    console.log(respuesta);
+                    if (respuesta == 'success') {
                         swal("¡Se agregó la cena correctamente!", "", "success").
                         then((value) => {
                             window.location.reload();
+                        });
+                    } else if (respuesta == 'fail_cupo'){
+                        swal("¡Lo sentimos no puede agregar tantas personas a la Cena, Cupo limitado!", "Intente con menos Invitados", "warning").
+                        then((value) => {
+                           // window.location.replace("/Account/")
                         });
                     } else {
                         swal("¡No se pudo agregar ninguna cena!", "", "warning").
@@ -432,7 +463,7 @@
                     }
                 },
                 error: function(respuesta) {
-                    console.log(respuesta.status);
+                    console.log(respuesta);
                 }
 
             });

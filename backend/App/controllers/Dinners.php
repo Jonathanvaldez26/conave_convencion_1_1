@@ -45,12 +45,20 @@ html;
 
       $anfitrion = DataDao::getAnfitrion($_SESSION['utilerias_asistentes_id']);
       $restaurantes = DataDao::getRestaurantes();
-      // var_dump($restaurantes);
       $restaurante = '';
 
       foreach ($restaurantes as $key => $value) {
         $restaurante .=<<<html
         <option value="{$value['id_restaurante']}">{$value['nombre']}</option>
+html;
+      }
+
+      $rests = DataDao::getRestaurantes();
+      $rest = '';
+
+      foreach ($rests as $key => $value) {
+        $rest .=<<<html
+        <input id="{$value['id_restaurante']}" value="{$value['capacidad']}" hidden readonly>
 html;
       }
 
@@ -68,6 +76,8 @@ html;
       View::set('anfitrion',$anfitrion);
       View::set('restaurante',$restaurante);
       View::set('restaurantes',$restaurantes);
+      View::set('rest',$rest);
+      View::set('rests',$rests);
       View::set('asistente',$asistente);
       View::set('asistentes',$asistentes);
       // View::set('cupo',$cupo);
@@ -127,46 +137,58 @@ html;
               // $documento2->_asistente4 = $asistente4;
               // $documento2->_asistente5 = $asistente5;
 
-              if ($asistente1 != NULL && $asistente1 != 'NULL'){
-                $asistente = $asistente1;
-                $documento2->_asistente = $asistente;
-                // var_dump($documento2);
-                $id_assist1 = DataDao::insertReservacion($documento2);
-              }
+              $capacidad = DataDao::getRestaurantesById($id_restaurante)[0]['capacidad'];
+              $cupo = DataDao::getNumCupo($id_restaurante)['num'];
+              // var_dump($capacidad);
 
-              if ($asistente2 != NULL && $asistente2 != 'NULL'){
-                $asistente = $asistente2;
-                $documento2->_asistente = $asistente;
-                $id_assist2 = DataDao::insertReservacion($documento2);
-              }
-
-              if ($asistente3 != NULL && $asistente3 != 'NULL'){
-                $asistente = $asistente3;
-                $documento2->_asistente = $asistente;
-                $id_assist3 = DataDao::insertReservacion($documento2);
-              }
-
-              if ($asistente4 != NULL && $asistente4 != 'NULL'){
-                $asistente = $asistente4;
-                $documento2->_asistente = $asistente;
-                $id_assist4 = DataDao::insertReservacion($documento2);
-              }
-
-              if ($asistente5 != NULL && $asistente5 != 'NULL'){
-                $asistente = $asistente5;
-                $documento2->_asistente = $asistente;
-                $id_assist5 = DataDao::insertReservacion($documento2);
-              }
-
-              $cupo = DataDao::getNumCupo();
-
-              if ($id_assist1 || $id_assist2 || $id_assist3 || $id_assist4  || $id_assist5) {
-                  echo "success";
-                  //header("Location: /Home");
+              $cupo_t =$cupo+$cantidad;
+              if ($cupo < $capacidad && $cupo_t <= $capacidad) {
+                $msg = 'success';
+                if ($asistente1 != NULL && $asistente1 != 'NULL'){
+                  $asistente = $asistente1;
+                  $documento2->_asistente = $asistente;
+                  // var_dump($documento2);
+                  $id_assist1 = DataDao::insertReservacion($documento2);
+                }
+  
+                if ($asistente2 != NULL && $asistente2 != 'NULL'){
+                  $asistente = $asistente2;
+                  $documento2->_asistente = $asistente;
+                  $id_assist2 = DataDao::insertReservacion($documento2);
+                }
+  
+                if ($asistente3 != NULL && $asistente3 != 'NULL'){
+                  $asistente = $asistente3;
+                  $documento2->_asistente = $asistente;
+                  $id_assist3 = DataDao::insertReservacion($documento2);
+                }
+  
+                if ($asistente4 != NULL && $asistente4 != 'NULL'){
+                  $asistente = $asistente4;
+                  $documento2->_asistente = $asistente;
+                  $id_assist4 = DataDao::insertReservacion($documento2);
+                }
+  
+                if ($asistente5 != NULL && $asistente5 != 'NULL'){
+                  $asistente = $asistente5;
+                  $documento2->_asistente = $asistente;
+                  $id_assist5 = DataDao::insertReservacion($documento2);
+                }
+  
+                
+  
+                if ($id_assist1 || $id_assist2 || $id_assist3 || $id_assist4  || $id_assist5) {
+                    echo $msg;
+                    //header("Location: /Home");
+                } else {
+                    echo "fail";
+                    // header("Location: /Home/");
+                }
               } else {
-                  echo "fail";
-                  // header("Location: /Home/");
+                echo "fail_cupo";
               }
+
+              
         } else {
             echo "fail";
             // header("Location: /Home/");
