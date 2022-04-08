@@ -68,6 +68,7 @@ html;
         $pases_abordar = PasesAbordarDao::getCount($_SESSION['utilerias_asistentes_id']);
 
         $documento = PasesAbordarDao::getDocAsist($_SESSION['utilerias_asistentes_id'])['url'];
+        $documento_salida = PasesAbordarDao::getDocAsistSalida($_SESSION['utilerias_asistentes_id'])['url'];
         $nombre_completo = PasesAbordarDao::getDocAsist($_SESSION['utilerias_asistentes_id'])['nombre_completo'];
         // var_dump($nombre_completo);
         
@@ -75,6 +76,7 @@ html;
             //Vista principal
             View::set('nombre_completo',$nombre_completo);
             View::set('documento',$documento);
+            View::set('documento_salida',$documento_salida);
             View::render("passes_all");
         }else{
             View::set('documento',$documento);

@@ -136,6 +136,9 @@
                                                 <span class="font-weight-bold text-xl" style="color: #940e0e">Aún NO Disponible para Descarga</span><span class="text-xs">Asegurate de descargar tu boleto antes de abordar una vez que se encuentre disponible.</span>
                                             </div>
                                         </div>
+                                        <div class="d-flex">
+                                            <button class="btn btn-success btn-link btn-icon-only btn-rounded btn-sm text-dark icon-move-right my-auto" data-toggle="modal" data-target="#ver-pase-salida"><i class="ni ni-bold-right" aria-hidden="true"></i></button>
+                                        </div>
                                     </li>
                                 </ul>
                                 <div class="row">
@@ -395,6 +398,27 @@
             </div> -->
             <div class="modal-body">
                 <iframe src="https://www.admin.convencionasofarma2022.mx/comprobante_vuelo_uno/<?php echo $documento;?>"
+                        style="width:100%; height:780px;" frameborder="0" >
+                </iframe>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="ver-pase-salida" tabindex="-1" role="dialog" aria-labelledby="ver-comprobante" aria-hidden="true">
+    <div class="modal-dialog" role="document" style="max-width: 590px;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Pases de Abordar</h5>
+                <span type="button" class="btn btn-danger" data-dismiss="modal" aria-label="Close">
+                            X
+                        </span>
+            </div>
+            <!-- <div class="modal-header">
+                <p>Por su seguridad y la de las demás personas, le pedimos que nos proporcione la Información siguiente para comprobar que no este contagiado de COVID.</p>
+            </div> -->
+            <div class="modal-body">
+                <iframe src="https://www.admin.convencionasofarma2022.mx/comprobante_vuelo_dos/<?php echo $documento_salida;?>"
                         style="width:100%; height:780px;" frameborder="0" >
                 </iframe>
             </div>
