@@ -85,7 +85,7 @@
                             </div>
                             <div class="card-body p-3">
                                 <ul class="list-group">
-                                    <li class="list-group-item border-0 d-flex justify-content-between ps-0 mb-2 border-radius-lg">
+                                    <!-- <li class="list-group-item border-0 d-flex justify-content-between ps-0 mb-2 border-radius-lg">
                                         <div class="d-flex align-items-center">
                                             <div class="icon icon-shape icon-sm me-3 bg-gradient-dark shadow text-center">
                                                 <svg width="12px" height="12px" viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="mt-1">
@@ -112,7 +112,7 @@
                                         <div class="d-flex">
                                             <button class="btn btn-success btn-link btn-icon-only btn-rounded btn-sm text-dark icon-move-right my-auto" data-toggle="modal" data-target="#ver-pase-llegada"><i class="ni ni-bold-right" aria-hidden="true"></i></button>
                                         </div>
-                                    </li>
+                                    </li> -->
                                     <li class="list-group-item border-0 d-flex justify-content-between ps-0 mb-2 border-radius-lg">
                                         <div class="d-flex align-items-center">
                                             <div class="icon icon-shape icon-sm me-3 bg-gradient-dark shadow text-center">
@@ -133,7 +133,7 @@
                                             </div>
                                             <div class="d-flex flex-column">
                                                 <h6 class="mb-1 text-dark text-sm">Ticket Salida</h6>
-                                                <span class="font-weight-bold text-xl" style="color: #940e0e">Aún NO Disponible para Descarga</span><span class="text-xs">Asegurate de descargar tu boleto antes de abordar una vez que se encuentre disponible.</span>
+                                                <span class="font-weight-bold text-xl" style="color: #01a31c">Disponible para Descarga</span><span class="text-xs">Asegurate de descargar tu boleto antes de abordar una vez que se encuentre disponible.</span>
                                             </div>
                                         </div>
                                         <div class="d-flex">
