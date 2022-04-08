@@ -331,7 +331,7 @@
                         </div>
                     </div> -->
                     <div class="col-md-6 mb-4">
-                        <a type="button" data-toggle="modal" data-target="#ver-pickup">
+                        <a type="button" data-toggle="modal"  id="ver_pickup_">
                             <div class="card card-link">
                                 <div class="card-body text-center">
                                     <div class="col-12 text-end">
@@ -381,13 +381,10 @@
                 </div> -->
                 <div class="modal-body">
                     <div class="container">
-                        <div class="row mt-lg-0 mt-8">
-                            <div class="col-lg-12 my-auto">
-                                <h1 class="display-1 text-bolder text-gradient text-danger fadeIn1 fadeInBottom mt-5">Estamos preparando tu PickUp</h1>
-                                <h2 class="fadeIn3 fadeInBottom opacity-8">Equipo Asofarma</h2>
-                                <p class="lead opacity-6 fadeIn2 fadeInBottom">Le sugerimos consultar más tarde...</p>
-                            </div>
+                        <div id="cont-pickup">
+
                         </div>
+                        
                         <br><br><br><br>
                     </div>
                 </div>
@@ -962,6 +959,97 @@
 
 
 
+                },
+                error: function(respuesta) {
+                    console.log(respuesta);
+                }
+
+            });
+        })
+
+        $('#ver_pickup_').on("click", function(event) {
+            var id = $("#id_asistente").val();
+            // alert(id);
+
+            $('#ver-pickup').modal('show');
+            // $(this).attr('data-target','ver-pickup')
+
+            //alert(id);
+            $.ajax({
+                url: "/Home/getPickup",
+                type: "POST",
+                data: {
+                    id
+                },
+                dataType: 'json',
+                beforeSend: function() {
+                    console.log("Procesando....");
+                    // $("#escala1").empty();
+                    // $("#escala2").empty();
+
+
+                },
+                success: function(respuesta) {
+                
+                    console.log(respuesta);
+
+                    // $("#nombre_asistente").html(respuesta.nombre);
+                    // $("#aerolinea_origen").html(respuesta.aerolinea_origen);
+                    // $("#fecha_salida").html(moment(respuesta.fecha_salida).format('LL'));
+                    // $("#hora_salida").html(respuesta.hora_salida);
+                    // $("#aeropuerto_salida").html(respuesta.aeropuerto_salida);
+
+                    // $("#aerolinea_destino").html(respuesta.aerolinea_destino);
+                    // $("#fecha_regreso").html(moment(respuesta.fecha_regreso).format('LL'));
+                    // $("#hora_regreso").html(respuesta.hora_regreso);
+                    // $("#aeropuerto_regreso").html(respuesta.aeropuerto_regreso);
+
+                    // $("#nota_itinerario").html(respuesta.nota);
+
+                    if (respuesta.count > 0) {
+                        $("#cont-pickup").append(
+                            `<div class="row mt-lg-0 mt-8">
+
+                            <div class="col-md-6 col-lg-6">
+                                <div class="form-group col-md-6">
+                                    <label class="control-label col-md-12 col-sm-1 col-xs-12" for="aerolinea_origen">Fecha de cita</label>
+                                    <div class="col-md-12 col-sm-12 col-xs-12">                                        
+                                        <span class="fa fas fa-calendar" aria-hidden="true"></span> <label>${moment(respuesta.data.fecha_cita).format('LL')}</label>
+
+                                    </div>
+                                    <span id="availability_"></span>
+                                </div>
+                            </div>
+                                
+                            <div class="col-md-6 col-lg-6">
+                                <label class="form-label">Hora de cita  </label>
+                                <div class="input-group">                                        
+                                    <i class="fa fa-solid fa-clock"></i>&nbsp;<label>${respuesta.data.hora_cita}</label>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6 col-lg-6">
+                                <label class="form-label">Te esperamos en</label>
+                                <div class="input-group">                                   
+                                    <i class="fa far fa-map-marker-alt"></i>&nbsp;<label>${respuesta.data.id_punto_reunion_pickup}</label>
+                                </div>
+                            </div>
+                            
+                        </div>`
+                        );
+                    } else {
+
+                        $("#cont-pickup").append(
+                            `<div class="row mt-lg-0 mt-8">
+                            <div class="col-lg-12 my-auto">
+                                <h1 class="display-1 text-bolder text-gradient text-danger fadeIn1 fadeInBottom mt-5">Estamos preparando tu PickUp</h1>
+                                <h2 class="fadeIn3 fadeInBottom opacity-8">Equipo Asofarma</h2>
+                                <p class="lead opacity-6 fadeIn2 fadeInBottom">Le sugerimos consultar más tarde...</p>
+                            </div>
+                        </div>`
+                        );
+                        
+                    }
                 },
                 error: function(respuesta) {
                     console.log(respuesta);

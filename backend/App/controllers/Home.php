@@ -263,5 +263,17 @@ html;
       echo json_encode($asistenteItinerario);
     }
 
+    function getPickup(){
+      $id_asis = $_POST['id'];
+      $asistentePickup = HomeDao::getPickupAsistente($id_asis)[0];
+
+      $count = count($asistentePickup);
+      $data = [
+        'data' => $asistentePickup,
+        'count' => $count
+      ];
+      echo json_encode($data);
+    }
+
 
 }

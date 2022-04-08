@@ -76,6 +76,25 @@ sql;
       return $mysqli->queryAll($query);
     }
 
+    public static function getPickupAsistente($id){
+      $mysqli = Database::getInstance(true);
+      $query=<<<sql
+      SELECT pu.* , uad.nombre AS nombre_admin,
+        ra.telefono, ra.email,
+		CONCAT (ra.nombre,' ',ra.segundo_nombre,' ',ra.apellido_paterno,' ',ra.apellido_materno) AS nombre_completo
+        FROM pickup pu
+        INNER JOIN utilerias_asistentes ua
+        ON ua.utilerias_asistentes_id = pu.utilerias_asistentes_id
+        INNER JOIN registros_acceso ra
+        ON ra.id_registro_acceso = ua.id_registro_acceso
+        INNER JOIN utilerias_administradores uad
+        ON uad.utilerias_administradores_id = pu.utilerias_administradores_id
+        WHERE ua.utilerias_asistentes_id = $id
+      
+sql;
+      return $mysqli->queryAll($query);
+    }
+
     public static function getQRById($id){
       $mysqli = Database::getInstance(true);
       $query=<<<sql
