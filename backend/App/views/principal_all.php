@@ -965,7 +965,7 @@
                 }
 
             });
-        })
+        }) 
 
         $('#ver_pickup_').on("click", function(event) {
             var id = $("#id_asistente").val();
